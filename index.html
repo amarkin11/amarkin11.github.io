@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <link href="js/jquery.bxslider.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -23,8 +24,8 @@
             </ul>
         </nav>
     </div>
-    <div class="shapka">
-        <img src="images/shapka.png" alt="#" title="">
+    <div class="header">
+        <img src="images/header.png" alt="#" title="">
     </div>
 
     <div>
@@ -188,7 +189,8 @@
 </div>
 <script>
     $(document).ready(function () {
-        $('.bxslider').bxSlider();
+        $('.bxslider').bxSlider({
+        adaptiveHeight: true}); 
     });
 </script>
 </body>
