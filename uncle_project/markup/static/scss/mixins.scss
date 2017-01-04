@@ -1,0 +1,65 @@
+// Mixins.
+
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+@mixin cf {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+@mixin blocks-justify {
+    text-align: justify;
+    text-justify: newspaper;
+}
+
+// You can add your own mixins here:
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+// You can add your own mixins here:
+
+@mixin respond-to($media) {
+    @if $media == phone {
+        @media only screen and (max-width: $fablet - 1) { @content; }
+    }
+    @else if $media == fablet {
+        @media only screen and (max-width: $tablet - 1) { @content; }
+    }
+    @else if $media == tablet {
+        @media only screen and (max-width: $desktop - 1) { @content; }
+    }
+    @else if $media == desktop {
+        @media only screen and (max-width: $large - 1) { @content; }
+    }
+    //@else if $media == iphone_four {
+    //    @media only screen and (max-width: $phone) and (max-height: 375px) { @content; }
+    //}
+    //@else if $media == iphone_five {
+    //    @media only screen and (max-width: $phone) and (max-height: 460px) { @content; }
+    //}
+}
