@@ -1,0 +1,14 @@
+.c-gallery {
+    width: 1024px;
+    // height: 540px;
+    margin: 20px auto;
+
+    &-slider {
+            height: 550px;
+
+            img {
+                height: 100%;
+            }
+    }
+}
+
