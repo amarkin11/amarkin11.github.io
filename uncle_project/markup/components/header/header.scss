@@ -19,9 +19,9 @@
             justify-content: space-around;
             height: 150px;
             background-color: $white;
-            color: $white;
-            background-image: url('%=static=%content/water_bg_header.jpg');
-            background-position: 50%;
+            color: $black;
+            // background-image: url('%=static=%content/water_bg_header.jpg');
+            // background-position: 50%;
         }
     }
 
@@ -29,8 +29,10 @@
 
         &-block {
             // position: relative;
-            width: 150px;
+            // width: 150px;
             height: auto;
+            // border: 1px solid $grey;
+            background-color: rgba($white, .2);
         }
 
         // &-img {
@@ -39,12 +41,18 @@
         // }
 
         &-title {
-            font-size: 1.2rem;
-            text-indent: -9999px;
-            overflow: hidden;
-            background-image: url(http://www.psecem.com/communities/8/004/011/215/388/images/4609668480.jpg);
-            background-size: 100%;
-            height: 150px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+
+            &--hidden{
+                font-size: 1.2rem;
+                text-indent: -9999px;
+                overflow: hidden;
+                // background-image: url(http://www.psecem.com/communities/8/004/011/215/388/images/4609668480.jpg);
+                // background-size: 100%;
+                height: 150px;
+            }
         }
 
     }
@@ -52,11 +60,13 @@
     &__contacts {
         display: flex;
         align-items: center;
-        color: $white;
+        color: $black;
 
         &-text {
             display: inline-block;
-            font-size: 3rem; 
+            font-size: 3rem;
+            margin-left: 20px;
+            vertical-align: middle; 
         }
 
         &-phone {
@@ -65,9 +75,39 @@
             margin-right: 20px;
         }
     }
+
+    &__text {
+        padding-left: 20px;
+
+        &--right {
+            
+            &:before {
+                content: '\f017';
+                font-family: FontAwesome;
+            }
+        }
+
+        &--left {
+            
+            &:before {
+                content: '\f087';
+                font-family: FontAwesome;
+            }
+        }
+    }
 }
 
 .c-icon {
     display: inline-block;
-    font-size: 3rem;
+    font-size: 4rem;
+    color: blue;
+    vertical-align: middle;
+
+    &--bath {
+        font-size: 10rem;
+        color: blue;
+        line-height: 1.5;
+        text-align: center;
+
+    }
 }

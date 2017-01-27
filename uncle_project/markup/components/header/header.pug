@@ -1,12 +1,14 @@
 mixin header()
     header.c-header__content
         .c-header__info-text
-            .c-header__text Lorem ipsum dolor sit amet
-            .c-header__text Lorem ipsum dolor sit amet
+            .c-header__text.c-header__text--left Lorem ipsum dolor sit amet
+            .c-header__text.c-header__text--right Lorem ipsum dolor sit amet
         .c-header__wrap--flex
             .c-header__logo-block
+                i.c-icon.c-icon--bath.fa.fa-bath
+                h1.c-header__logo-title Lorem ipsum<br>dolor sit amet
                 //- img.c-header__logo-img(src='http://www.psecem.com/communities/8/004/011/215/388/images/4609668480.jpg')
-                h1.c-header__logo-title Ремонт ванной комнаты, туалетов, сантехнического узла. Ванна под ключ. Сантехнические работы в квартире.
+                h1.c-header__logo-title--hidden Ремонт ванной комнаты, туалетов, сантехнического узла. Ванна под ключ. Сантехнические работы в квартире.
             .c-header__contacts
                 .c-header__contacts-phone
                     i.c-icon.fa.fa-mobile 
