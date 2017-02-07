@@ -1,0 +1,27 @@
+.service {
+
+	&__title {
+		text-align: center;
+		padding-bottom: 40px;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	&__content-list {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 40px;
+		width: 900px;
+		margin: 0 auto;
+	}
+
+	&__items {
+		height: 150px;
+		border: 1px solid $grey;
+		width: 250px;
+		background-color: tomato;
+		padding: 10px 0;
+		text-align: center;
+		box-sizing: border-box;
+	}
+}

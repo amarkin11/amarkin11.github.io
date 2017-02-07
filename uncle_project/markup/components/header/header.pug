@@ -1,8 +1,8 @@
 mixin header()
     header.c-header__content
         .c-header__info-text
-            .c-header__text.c-header__text--left Lorem ipsum dolor sit amet
-            .c-header__text.c-header__text--right Lorem ipsum dolor sit amet
+            p.c-header__text.c-header__text--left Lorem ipsum dolor sit amet
+            p.c-header__text.c-header__text--right Lorem ipsum dolor sit amet
         .c-header__wrap--flex
             .c-header__logo-block
                 i.c-icon.c-icon--bath.fa.fa-bath
@@ -15,5 +15,5 @@ mixin header()
                     p.c-header__contacts-text Телефон
                 .c-header__contacts-mail
                     i.c-icon.fa.fa-envelope-o    
-                    p.c-header__contacts-text Почта
+                    a.c-header__contacts-text(href='mailto:chudokreker@ya.ru') Почта
                 
