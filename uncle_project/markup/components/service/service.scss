@@ -1,4 +1,8 @@
-.service {
+.c-service {
+	&__content {
+		background-color: $grey;
+		padding-bottom: 20px;
+	}
 
 	&__title {
 		text-align: center;
@@ -9,19 +13,23 @@
 
 	&__content-list {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		margin-top: 40px;
 		width: 900px;
 		margin: 0 auto;
 	}
 
 	&__items {
-		height: 150px;
+		// height: 150px;
 		border: 1px solid $grey;
 		width: 250px;
-		background-color: tomato;
-		padding: 10px 0;
+		background-color: $white;
 		text-align: center;
 		box-sizing: border-box;
+
+		&-title {
+			background-color: $white;
+			padding: 20px 0;
+		}
 	}
 }

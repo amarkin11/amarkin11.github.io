@@ -1,0 +1,23 @@
+.c-about {
+    &__content {
+
+        @include cf();
+        
+        margin: 20px auto 0;
+        width: 900px;
+    }
+
+    &__img {
+        width: 45%;
+        float: left;
+    }
+
+    &__title {
+        width: 50%;
+        float: right;
+    }
+
+    &__text {
+        font-size: 2rem;
+    }
+}
