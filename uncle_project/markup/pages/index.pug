@@ -3,6 +3,7 @@ html(class="no-js", lang="ru")
 
     include ../components/head/head.pug
     include ../components/header/header.pug
+    include ../components/service_popup/service_popup.pug
     include ../components/gallery/gallery.pug
     include ../components/service/service.pug
     include ../components/about/about.pug
@@ -15,6 +16,8 @@ html(class="no-js", lang="ru")
 
         .l-grid
             +header()
+
+            +service_popup()
 
             +gallery()
 
