@@ -5,3 +5,5 @@ $('.c-gallery-slider').bxSlider({
 	pager: false,
 	controls: false
 });
+
+$('.js-lightbox-img').magnificPopup({type:'image'});

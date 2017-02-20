@@ -4,20 +4,45 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 1160px;
-    //width: 71%;
-    width: 990px;
-    overflow: hidden;
+    width: 800px;
+    background-color: $white;
+    // overflow: hidden;
 
     &-close {
         display: block;
-        background-image: url('%=static=%general/cross-slider.png');
+        background-image: url('%=static=%content/cross-slider.png');
         width: 19px;
         height: 19px;
         position: absolute;
         top: 10px;
         right: 15px;
-        cursor: pointer;
         z-index: 20;
+    }
+
+    &-img {
+        display: block;
+        height: 400px;
+    }
+
+    &-content {
+        height: 400px;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        color: $black;
+    }
+
+    &-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        
+    }
+
+    &-text {
+        font-size: 1.8rem;
+        padding-top: 20px;
+        padding-right: 20px;
+        height: 290px;
+        overflow: auto;
     }
 }
 

@@ -19,7 +19,7 @@
             display: flex;
             justify-content: space-around;
             height: 150px;
-            background-color: $white;
+            // background-color: $white;
             color: $black;
             // background-image: url('%=static=%content/water_bg_header.jpg');
             // background-position: 50%;
@@ -31,9 +31,9 @@
         &-block {
             // position: relative;
             // width: 150px;
-            height: auto;
+            // height: auto;
             // border: 1px solid $grey;
-            background-color: rgba($white, .2);
+            // background-color: rgba($white, .2);
         }
 
         // &-img {
