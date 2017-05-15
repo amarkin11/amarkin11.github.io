@@ -16,19 +16,37 @@ html(class="no-js", lang="ru")
         |%=symbols=%
 
         .l-grid
-            +header()
+            <div id="fullpage">
+                <div class="section">
+                    +header()
+                    +gallery()
+                </div>
+                <div class="section">
+                    +service()
+                    +service_popup()
+                </div>
+                <div class="section">
+                    +about()
+                </div>
+                <div class="section">
+                     +gallery_project()
+                     +footer()
+                </div>
 
-            +service_popup()
+            </div>
+            
 
-            +gallery()
+            
 
-            +service()
+            
 
-            +about()
+           
 
-            +gallery_project()
+            
 
-            +footer()
+            
+
+            
 
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
         script svg4everybody();

@@ -1,5 +1,5 @@
 $('.c-gallery-slider').bxSlider({
-	auto: true,
+	auto: false,
 	autoControls: true,
 	randomStart: true,
 	pager: false,
@@ -7,3 +7,5 @@ $('.c-gallery-slider').bxSlider({
 });
 
 $('.js-lightbox-img').magnificPopup({type:'image'});
+
+$('#fullpage').fullpage();
