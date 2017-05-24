@@ -1,8 +1,13 @@
 .c-gallery-project {
+	display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
 
-	margin-top: 20px;
-	padding-top: 20px;
-	background-color: $grey;
+	&__wrap {
+		margin-top: 20px;
+		padding-top: 20px;
+		background-color: $grey;
+	}
 
 	&__title {
 		text-align: center;
@@ -11,35 +16,34 @@
 		font-weight: bold;
 	}
 
-	&__image {
-		margin-top: 40px;
-		text-align: center;
-
-		a {
-			display: inline-block;
-			width: 15%;
-			outline: none;
-
-			&:not(:last-child) {
-				margin-right: 30px;
-			}
-		}
-
-		
-
-		img {
-
-			&:hover {
-            transform: scale(1.1)
-        	}
-		}
-	}
-
 	&__text {
 		padding: 20px 0;
 		font-size: 1.6rem;
 		color: $black;
 		text-align: center;
 		// font-weight: bold;
+	}
+}
+
+.c-project__img {
+	width: 200px;
+
+	a {
+		display: block;
+		width: 100%;
+		outline: none;
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+
+		&:hover {
+        transform: scale(1.1)
+    	}
 	}
 }

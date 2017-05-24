@@ -4,7 +4,7 @@ html(class="no-js", lang="ru")
     include ../components/head/head.pug
     include ../components/header/header.pug
     include ../components/service_popup/service_popup.pug
-    include ../components/gallery/gallery.pug
+    include ../components/teaser/teaser.pug
     include ../components/service/service.pug
     include ../components/about/about.pug
     include ../components/gallery_project/gallery_project.pug
@@ -16,37 +16,17 @@ html(class="no-js", lang="ru")
         |%=symbols=%
 
         .l-grid
-            <div id="fullpage">
-                <div class="section">
+
+            .l-grid__content(id="fullpage")
+                
+                section.section
                     +header()
-                    +gallery()
-                </div>
-                <div class="section">
+                    +teaser()
+                section.section 
                     +service()
                     +service_popup()
-                </div>
-                <div class="section">
+                section.section 
                     +about()
-                </div>
-                <div class="section">
-                     +gallery_project()
-                     +footer()
-                </div>
-
-            </div>
-            
-
-            
-
-            
-
-           
-
-            
-
-            
-
-            
-
-        script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        script svg4everybody();
+                section.section  
+                    +gallery_project()
+                    +footer()
