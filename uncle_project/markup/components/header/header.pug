@@ -1,14 +1,24 @@
 mixin header()
-    header.c-header
-        .c-header__logo
-            i.c-icon.c-icon--bath.fa.fa-bath
-            h1.c-header__title Lorem ipsum<br>dolor sit amet
-            h1.c-header__title-hidden Ремонт квартир. Ремонт ванной комнаты, ремонт туалета. Ремонт ваннаой под ключ, ванна под ключ, ремонт санузла.
-        .c-header__contacts
-            .c-header__contacts-phone
-                i.c-icon.fa.fa-mobile 
-                p.c-header__contacts-text +7(123)456-78-90
-            .c-header__contacts-mail
-                i.c-icon.fa.fa-envelope-o    
-                a.c-header__contacts-text(href='mailto:chudokreker@ya.ru') babulhanov@mail.ru
-            p.c-header__contacts-clork Без выходных, с 9:00 до 22:00
+    header.header
+        .header__logo
+            i.icon.icon--bath.fa.fa-bath
+            h2.header__logo-title Lorem ipsum<br>dolor sit amet
+            h1.header__logo-title.title-hidden Ремонт квартир. Ремонт ванной комнаты, ремонт туалета. Ремонт ваннаой под ключ, ванна под ключ, ремонт санузла.
+        nav.header__nav
+            ul.header__nav-list
+                li.header__nav-item
+                    a.header__nav-link(href="") Service
+                li.header__nav-item
+                    a.header__nav-link(href="") About
+                li.header__nav-item
+                    a.header__nav-link(href="") Gallery
+        .header__contacts-wrap
+            .header__contacts
+                i.icon.fa.fa-mobile 
+                p.text.text-phone +7(123)456-78-90
+            .header__contacts
+                i.icon.fa.fa-envelope-o    
+                a.text.text-link.text-link--mail(href='mailto:chudokreker@ya.ru') babulhanov@mail.ru
+            .header__contacts.header__contacts--clock
+                i.icon.fa.fa-clock-o
+                p.text.text-clock Без выходных, с 9:00 до 22:00

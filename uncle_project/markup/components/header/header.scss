@@ -1,115 +1,112 @@
-.c-header {
-    @include cf ();
-    
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
-    padding: 40px;
     box-sizing: border-box;
-    // width: 1100px;
-    // margin: 0 auto;
-    color: #05789e;
+    color: $black;
 
     &__logo {
-        float: left;
-        // padding-top: 20px;
-    }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-
-    &__title {
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 20px;
-
-        &-hidden {
-            font-size: 1.2rem;
-            text-indent: -9999px;
-            overflow: hidden;
-            // height: 150px;
-            position: absolute;
-            top: 50%;
-            left: 0;
+        &-title {
+            margin-left: 40px;
         }
     }
 
-    &__contacts {
-        @include cf ();
-        float: right;
-        // padding: 40px 0;
+    &__nav {
 
-        &-phone {
-            padding-right: 20px;
-            border-right: 2px solid #05789e;
-            margin-right: 20px;
-            float: left;
+        &-list {
+            @include nl();
+            display: flex;
+            justify-content: space-between;
         }
 
-        &-mail {
-            float: left;
-            border-bottom: 1px solid #05789e;
+        &-item {
+            height: 38px;
+
+            &:not(:first-child) {
+                margin-left: 80px;
+            }
+        }
+
+        &-link {
+            display: block;
+            text-decoration: none;
+            font-size: 2.2rem;
+            color: $black;
+            font-weight: 700;
+            border: 2px solid $black;
+            border-radius: 5px;
+            line-height: 34px;
+            padding: 0 40px;
 
             &:hover {
                 border-color: transparent;
             }
-
-            a {
-                text-decoration: none;
-            }
         }
+    }
 
-        &-clork {
-            clear: both;
-            font-size: 2rem;
-            padding-top: 20px;
+    &__contacts-wrap {
+        width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-            &:before {
-                content: '\f017';
-                font-family: FontAwesome;
-                padding-right: 20px;
-                font-size: 3rem;
-            }
-        }
+    &__contacts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        &-text {
-            display: inline-block;
-            font-size: 3rem;
-            margin-left: 20px;
-            vertical-align: middle;
-            color: #05789e;   
-        }
-
-    &__text {
-        font-size: 2rem;
-
-        &--right {
-            
-           
-            }
-        }
-
-        &--left {
-            
-            &:before {
-                content: '\f087';
-                font-family: FontAwesome;
-                padding-right: 20px;
-                font-size: 3rem;
-            }
+        &--clock {
+            margin-top: 20px;
+            width: 100%;
+            justify-content: center;
         }
     }
 }
 
-.c-icon {
-    display: inline-block;
+.icon {
     font-size: 4rem;
-    vertical-align: middle;
+    color: $black;
 
     &--bath {
-        font-size: 10rem;
-        // line-height: 1.5;
-        // text-align: center;
+        font-size: 12rem;
+    }
+}
 
+.title-hidden {
+    font-size: 1.2rem;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.text-phone,
+.text-clock {
+    margin-left: 20px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.text-link--mail {
+    font-size: 2.2rem;
+    color: $black;
+    margin-left: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid $black;
+
+    &:hover {
+        border-color: transparent;
     }
 }
