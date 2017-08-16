@@ -1,0 +1,84 @@
+.header {
+    padding: 30px 115px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__logo {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    &__phone {
+        font-weight: bold;
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        } 
+    }
+}
+
+
+.logo {
+
+    &__img {
+        width: 26px;
+        height: 32px;
+    }
+
+    &__title {
+        font-size: 3rem;
+        color: $dark-blue;
+        margin-left: 20px;
+    }
+}
+
+.nav {
+
+    &__list {
+        @include nl();
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__item:not(:first-child) {
+        margin-left: 40px;
+    }
+
+    &__link {
+        display: block;
+        font-size: 1.6rem;
+        color: $dark-blue;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &--active {
+            color: $gold;
+        }
+    }
+}
+
+.chat-text {
+    display: block;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    background-color: $gold;
+    text-decoration: none;
+}
+
+.phone-text {
+    font-size: 2.4rem;
+    padding-left: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+    border-left: 1px solid $grey;
+}

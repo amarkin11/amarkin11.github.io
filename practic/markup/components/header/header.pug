@@ -1,0 +1,24 @@
+mixin header()
+    header.header
+        a.header__logo(href='#')
+            .logo__img
+                img(src='%=static=%img/general/logo.png')
+            p.logo__title Maguwo
+                strong Host
+        nav.header__nav
+            ul.nav__list
+                li.nav__item
+                    a.nav__link.nav__link--active(href="") home
+                li.nav__item
+                    a.nav__link(href="") about
+                li.nav__item
+                    a.nav__link(href="") pricing
+                li.nav__item
+                    a.nav__link(href="") domain
+                li.nav__item
+                    a.nav__link(href="") hosting
+        .header__phone
+            p.text.text--small Do you need help ? Just Email, Live chat or Call us
+            .header__phone-wrap
+                a(href="#").text.chat-text Live chat
+                p.text.phone-text 6284-6534

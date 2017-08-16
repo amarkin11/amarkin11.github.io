@@ -2,22 +2,35 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head.pug
-    include ../components/example/example.pug
+    include ../components/header/header.pug
     include ../components/footer/footer.pug
 
     head
         +head(head.defaults)
-    body.page
+    body
         |%=symbols=%
 
-        section.page__wrapper
+        .l-grid
+            +header()
 
-            //- Include your components here
-            +example()
+            .teaser
+                p.teaser__title Just a Proffesional Web Hosting Services
+                p.teaser__subtitle modern  -  fast  -  reliable
+                .teaser__img
+                    img(src="%=static=%img/content/molecul.png")
+            .services
+                .webhost
+                    .webhost__img
+                        img(src='%=static=%img/content/img_webhost.png')
+                    p.webhost__subtitle #1 Webhost Services
+                    p.webhost__text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh
+                    a.btn(href='#') More
+                .domain
+                    p.domain__title .com
+                    p.domain__subtitle #1 Domain Services
+                    p.domain_text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh
+                    a.btn(href='#') More
 
-            .page__buffer
-
-        .page__footer
             +footer()
 
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
