@@ -151,3 +151,50 @@ img {
     box-sizing: border-box;
     border: 3px solid $white;
 }
+
+.features {
+    padding: 95px 115px;
+    box-sizing: border-box;
+    background-image: url('%=static=%content/bg_features.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: $dark-blue;
+
+    &__title {
+        font-size: 4.8rem;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        font-size: 2.4rem;
+        margin-top: 30px;
+    }
+
+    &__list {
+        margin-top: 80px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        text-align: center;
+
+        &:not(:first-child) {
+            margin-left: 30px;
+        }
+
+        &-img {
+            width: 128px;
+            height: 128px;
+            display: inline-block;
+        }
+
+        &-title {
+            margin-top: 35px;
+            padding-top: 35px;
+            font-size: 3rem;
+            color: $gold;
+        }
+    }
+}
