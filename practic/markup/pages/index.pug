@@ -18,6 +18,17 @@ html(class="no-js", lang="ru")
                 p.teaser__subtitle modern  -  fast  -  reliable
                 .teaser__img
                     img(src="%=static=%img/content/molecul.png")
+                .teaser-form
+                    form.form(action="")
+                        input.form__input(type="text" value="Your Domain Name ...")
+                        .form__select-wrap
+                            select.form__select(name="domen" id="")
+                                option.form__option(value=".com") .com
+                                option.form__option(value=".ru") .ru
+                                option.form__option(value=".рф") .рф
+                                option.form__option(value=".net") .net
+                                option.form__option(value=".org") .org
+                        input.form__submit(type="submit" value="Check Availability") 
             .services
                 .webhost
                     .webhost__img
@@ -54,11 +65,47 @@ html(class="no-js", lang="ru")
                             img(src="%=static=%img/content/img_monitor.png")
                         p.features__item-title Live Monitoring
                         p.features__item-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+            .clients
+                .clients__info-wrap
+                    .clients__info
+                        .clients__title Our Clients
+                        .clients__text.
+                            This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.
+                    .clients__list
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company.jpg")
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company_two.jpg")
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company_three.jpg")
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company_four.jpg")
+                .clients__quote-list
+                    .clients__quote-item
+                        .clients__quote-text.
+                            “ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. ”
+                        .clients__quote-sign -Anna
+                        .clients__quote-user
+                            img(src="%=static=%img/content/img_quote_user.png")
+                    .clients__quote-item
+                        .clients__quote-text.
+                            “ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. ”
+                        .clients__quote-sign -Anna
+                        .clients__quote-user
+                            img(src="%=static=%img/content/img_quote_user.png")
+                    .clients__quote-item
+                        .clients__quote-text.
+                            “ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. ”
+                        .clients__quote-sign -Anna
+                        .clients__quote-user
+                            img(src="%=static=%img/content/img_quote_user.png")
+            .plans
+                .plans__wrap
+                    p.plans__title Do you want to view Plans & Pricing ?
+                    p.plans__subtitle Follow the button in the right section.
+                a.plans__btn(href="#") Plans & Pricing
+
 
             +footer()
 
-        script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        script svg4everybody();
-
-        //- Main scripts. You can replace it, but I recommend you to leave it here
-        script(src='%=static=%js/main%=hash=%%=min=%.js')
+        

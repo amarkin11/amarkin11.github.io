@@ -47,12 +47,16 @@
     @else if $media == large {
         @media only screen and (max-width: $hd - 1) { @content; }
     }
+    @else if $media == iphone_four {
+       @media only screen and (max-width: $phone - 1) { @content; }
+    }
     @else {
         @media only screen and (max-width: $media) { @content; }
     }
-    //@else if $media == iphone_four {
+    
+    // @else if $media == iphone_four {
     //    @media only screen and (max-width: $phone) and (max-height: 375px) { @content; }
-    //}
+    // }
     //@else if $media == iphone_five {
     //    @media only screen and (max-width: $phone) and (max-height: 460px) { @content; }
     //}

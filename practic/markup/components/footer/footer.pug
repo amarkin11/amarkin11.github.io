@@ -1,2 +1,41 @@
 mixin footer()
     footer.footer
+        .footer__contact
+            .footer__map
+                .footer__map-img
+                    img(src="%=static=%img/content/map.png")
+                .footer__map-mark
+                    img(src="%=static=%img/content/map_mark.png")
+                p.footer__map-adress Yogyakarta, Indonesia<br>55282
+            nav.footer__nav
+                .footer__nav-title Navigation
+                ul.footer__nav-list
+                    li.footer__nav-item
+                        a.footer__nav-link(href="#") Home
+                    li.footer__nav-item
+                        a.footer__nav-link(href="#") About
+                    li.footer__nav-item
+                        a.footer__nav-link(href="#") Domain
+                    li.footer__nav-item
+                        a.footer__nav-link(href="#") Hosting
+                    li.footer__nav-item
+                        a.footer__nav-link(href="#") Contact
+                .footer__social
+                    ul.footer__social-list
+                        li.footer__social-item
+                            a.footer__social-link.footer__social-tw(href="#")
+                        li.footer__social-item
+                            a.footer__social-link.footer__social-it(href="#")
+                        li.footer__social-item
+                            a.footer__social-link.footer__social-gg(href="#")
+                a.footer__anchor-top(href="#anchor-top") Back to Top
+        .footer__copyright
+            .footer__copyright-img
+                img(src="%=static=%img/content/footer_molecul.png")
+            p.footer__copyright-text Copyright 2014 Maguwohost by FikriStudio
+
+    script(src='%=static=%js/separate-js/svg4everybody.min.js')
+    script svg4everybody();
+
+    //- Main scripts. You can replace it, but I recommend you to leave it here
+    script(src='%=static=%js/main%=hash=%%=min=%.js')
