@@ -1,24 +1,14 @@
 mixin header()
-    header.header(id='anchor-top')
-        a.header__logo(href='#')
-            .logo__img
-                img(src='%=static=%img/general/logo.png')
-            p.logo__title Maguwo
-                span Host
+    header.header
+        .header__wrap
+            p.text.text--white 8 800 500 50 50
+            .header__logo
+                img.heder__logo-img(src="%=static=%img/general/logo.png", alt="")
+            a.header__link.text.text--white(href="#") call to order
         nav.header__nav
-            ul.nav__list
-                li.nav__item
-                    a.nav__link.nav__link--active(href="") home
-                li.nav__item
-                    a.nav__link(href="") about
-                li.nav__item
-                    a.nav__link(href="") pricing
-                li.nav__item
-                    a.nav__link(href="") domain
-                li.nav__item
-                    a.nav__link(href="") hosting
-        .header__phone
-            p.text.text--small Do you need help ? Just Email, Live chat or Call us
-            .header__phone-wrap
-                a(href="#").text.chat-text Live chat
-                p.text.phone-text 6284-6534
+            a.header__nav-link.text.text--white(href="#") Home
+            a.header__nav-link.text.text--white(href="#") About Us
+            a.header__nav-link.text.text--white(href="#") Gallery   
+            a.header__nav-link.text.text--white(href="#") Consultation
+            a.header__nav-link.text.text--white(href="#") Testimonials
+            a.header__nav-link.text.text--white(href="#") Contacts
