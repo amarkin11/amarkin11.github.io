@@ -42,6 +42,8 @@ img {
 
     &--title {
         font-size: 4.8rem;
+        text-transform: uppercase;
+        font-weight: normal;
     }
 
     &--subtitle {
@@ -66,5 +68,113 @@ img {
 
     span {
         color: $blue;
+    }
+}
+
+.section {
+    padding: 0 160px;
+
+    &--grey {
+        background-color: $lgrey;
+    }
+
+    &__miami {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 140px;
+        padding-bottom: 160px;
+        box-sizing: border-box;
+
+        &-text {
+            margin-left: 100px;
+
+            p {
+                line-height: 1.7;
+                padding-left: 10px;
+            }
+        }
+
+        &-list {
+            margin: 50px 0;
+            font-size: 1.6rem;
+            line-height: 1;
+
+            p {
+                line-height: 1;
+            }
+        }
+
+        &-item {
+
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__gallery {
+        padding-top: 110px;
+        padding-bottom: 110px;
+        position: relative;
+
+        &-title {
+            position: absolute;
+            left: 50%;
+            top: -30px;
+            transform: translateX(-50%);
+            z-index: 5;
+
+            &:after {
+                content:'';
+                display: block;
+                width: 20px;
+                height: 13px;
+                background-image: url('%=static=%content/title_bg.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                left: 50%;
+                bottom: -10px;
+                transform: translateX(-50%);
+                z-index: 10;
+                background-color: $lgrey;
+                padding: 0 9px;
+
+            }
+
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 2px solid $blue;
+            }
+        }
+
+        &-item {
+
+            p {
+                margin-top: 20px;
+            }
+
+            &:not(:first-child) {
+                margin-top: 35px;
+            }
+        }
+
+        &-photo {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-btn {
+            display: block;
+            font-size: 1.4rem;
+            color: $white;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            width: 190px;
+            margin: 40px auto 0;
+            background-color: $blue;
+            padding: 20px 0;
+        }
     }
 }
