@@ -62,7 +62,12 @@ html(class="no-js", lang="ru")
         script.
             $('.js-faq-link').click(function (e) {
                 e.preventDefault();
-                $(this).closest('.article__faq-item').find('.article__faq-desc').show();
+                if (условие) {
+                    код который будет выполняться если условие верно
+                } else {
+                    здесь код, который выполнится, если условие ложно
+                    $(this).closest('.article__faq-item').find('.article__faq-desc').show();
+                }
             });
 
             $('.menu-icon').click(function () {
