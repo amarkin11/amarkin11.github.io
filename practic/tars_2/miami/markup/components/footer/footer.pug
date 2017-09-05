@@ -1,0 +1,12 @@
+mixin footer()
+    footer.footer
+        .footer__logo
+            img.footer__logo-img(src="%=static=%img/general/logo.png", alt="")
+        p.footer__copyright.text.text--white &copy; 2013 Miami.
+        
+
+    script(src='%=static=%js/separate-js/svg4everybody.min.js')
+    script svg4everybody();
+
+    //- Main scripts. You can replace it, but I recommend you to leave it here
+    script(src='%=static=%js/main%=hash=%%=min=%.js')

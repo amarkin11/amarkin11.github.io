@@ -1,0 +1,111 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../components/head/head.pug
+    include ../components/header/header.pug
+    include ../components/footer/footer.pug
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+
+        .l-grid
+            +header()
+
+            .teaser
+                p.teaser__title Just a Proffesional Web Hosting Services
+                p.teaser__subtitle modern  -  fast  -  reliable
+                .teaser__img
+                    img(src="%=static=%img/content/molecul.png")
+                .teaser-form
+                    form.form(action="")
+                        input.form__input(type="text" value="Your Domain Name ...")
+                        .form__select-wrap
+                            select.form__select(name="domen" id="")
+                                option.form__option(value=".com") .com
+                                option.form__option(value=".ru") .ru
+                                option.form__option(value=".рф") .рф
+                                option.form__option(value=".net") .net
+                                option.form__option(value=".org") .org
+                        input.form__submit(type="submit" value="Check Availability") 
+            .services
+                .webhost
+                    .webhost__img
+                        img(src='%=static=%img/content/img_webhost.png')
+                    p.webhost__subtitle #1 Webhost Services
+                    p.webhost__text.text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    a.btn(href='#') More
+                .domain
+                    p.domain__title .com
+                    p.domain__subtitle #1 Domain Services
+                    p.domain__text.text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    a.btn(href='#') More
+            .features
+                p.features__title Our Features
+                p.features__subtitle Our Best Features
+                .features__list
+                    .features__item
+                        .features__item-img
+                            img(src="%=static=%img/content/img_support.png")
+                        p.features__item-title Live Support
+                        p.features__item-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                    .features__item
+                        .features__item-img
+                            img(src="%=static=%img/content/img_cloud.png")
+                        p.features__item-title Cloud Technology
+                        p.features__item-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                    .features__item
+                        .features__item-img
+                            img(src="%=static=%img/content/img_tech.png")
+                        p.features__item-title Hi Tech Database
+                        p.features__item-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                    .features__item
+                        .features__item-img
+                            img(src="%=static=%img/content/img_monitor.png")
+                        p.features__item-title Live Monitoring
+                        p.features__item-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+            .clients
+                .clients__info-wrap
+                    .clients__info
+                        .clients__title Our Clients
+                        .clients__text.
+                            This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.
+                    .clients__list
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company.jpg")
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company_two.jpg")
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company_three.jpg")
+                        .clients__item
+                            img(src="%=static=%img/content/clients_company_four.jpg")
+                .clients__quote-list
+                    .clients__quote-item
+                        .clients__quote-text.
+                            “ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. ”
+                        .clients__quote-sign -Anna
+                        .clients__quote-user
+                            img(src="%=static=%img/content/img_quote_user.png")
+                    .clients__quote-item
+                        .clients__quote-text.
+                            “ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. ”
+                        .clients__quote-sign -Anna
+                        .clients__quote-user
+                            img(src="%=static=%img/content/img_quote_user.png")
+                    .clients__quote-item
+                        .clients__quote-text.
+                            “ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. ”
+                        .clients__quote-sign -Anna
+                        .clients__quote-user
+                            img(src="%=static=%img/content/img_quote_user.png")
+            .plans
+                .plans__wrap
+                    p.plans__title Do you want to view Plans & Pricing ?
+                    p.plans__subtitle Follow the button in the right section.
+                a.plans__btn(href="#") Plans & Pricing
+
+
+            +footer()
+
+        
