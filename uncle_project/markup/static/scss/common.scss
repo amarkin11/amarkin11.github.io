@@ -38,6 +38,15 @@ img {
     background-color: #3cf;
 }
 
+.section {
+
+    &--teaser {
+        background-image: url('%=static=%content/bathroom.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
 .text {
     font-size: 1.8rem;
     font-weight: 400;

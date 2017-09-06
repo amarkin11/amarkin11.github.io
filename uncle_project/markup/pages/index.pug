@@ -4,7 +4,7 @@ html(class="no-js", lang="ru")
     include ../components/head/head.pug
     include ../components/header/header.pug
     include ../components/service_popup/service_popup.pug
-    include ../components/teaser/teaser.pug
+    //- include ../components/teaser/teaser.pug
     include ../components/service/service.pug
     include ../components/about/about.pug
     include ../components/gallery_project/gallery_project.pug
@@ -17,9 +17,9 @@ html(class="no-js", lang="ru")
 
         .l-grid
             .l-grid__content(id="fullpage")
-                section.section
+                section.section.section--teaser
                     +header()
-                    +teaser()
+                    //- +teaser()
                 section.section
                     +service()
                     +service_popup()

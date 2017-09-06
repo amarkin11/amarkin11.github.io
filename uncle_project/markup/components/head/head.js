@@ -1,4 +1,8 @@
-var headerHeight = $('.c-header').height();
+initFullpagePlugin();
+
+
+
+// var headerHeight = $('.c-header').height();
 
 // $('.c-gallery-slider').bxSlider({
 //     auto: false,
@@ -18,6 +22,6 @@ $('.js-magnific-popup').magnificPopup({
 
 
 
-$('#fullpage').fullpage({
-    // paddingTop: headerHeight
-});
+function initFullpagePlugin() {
+    $('#fullpage').fullpage();
+}
