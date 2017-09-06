@@ -1,8 +1,8 @@
 $('.js-service-items').click(function (e) {
-	e.preventDefault();
+    e.preventDefault();
 
-	$('body').addClass('no-scroll');
-	$('.l-service__popup').addClass('l-service__popup--active');
+    $('body').addClass('no-scroll');
+    $('.l-service__popup').addClass('l-service__popup--active');
 });
 
 $('.js-close-popup').click(function (e) {
