@@ -15,7 +15,7 @@ module.exports = {
     "js": {
         "workflow": "concat",
         "bundler": "webpack",
-        "lint": true,
+        "lint": ,
         "useBabel": false,
         "removeConsoleLog": true,
         "webpack": {

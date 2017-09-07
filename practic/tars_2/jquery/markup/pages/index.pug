@@ -6,7 +6,7 @@ html(class="no-js", lang="ru")
 
     head
         +head(head.defaults)
-    body
+    body.body
         | %=symbols=%
 
         .l-grid
@@ -58,40 +58,6 @@ html(class="no-js", lang="ru")
         script svg4everybody();
 
         script(src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous')
-
-        script.
-            $('.js-faq-link').click(function (e) {
-                e.preventDefault();
-                if (условие) {
-                    код который будет выполняться если условие верно
-                } else {
-                    здесь код, который выполнится, если условие ложно
-                    $(this).closest('.article__faq-item').find('.article__faq-desc').show();
-                }
-            });
-
-            $('.menu-icon').click(function () {
-                $('.menu').addClass('menu--active');
-            });
-
-            $('.menu__icon-close').click(function () {
-                $('.menu').removeClass('menu--active');
-            });
-
-            $('.btn--popup').click(function () {
-                $('.js-popup').show();
-            });
-
-            $('.popup__icon-close').click(function () {
-                $('.js-popup').hide();
-            });
-
-            $('.js-goto').click(function () {
-                var scrollTop = $('#targetScroll').offset().top;
-                $('html, body').animate({scrollTop: scrollTop}, 700);
-                return false;
-            });
-
 
         //- Main scripts. You can replace it, but I recommend you to leave it here
         script(src='%=static=%js/main%=hash=%%=min=%.js')
