@@ -14,12 +14,13 @@
 
 $('.js-faq-link').click(function (e) {
     e.preventDefault();
-    // if (условие) {
-    //     код который будет выполняться если условие верно
-    // } else {
-    //     здесь код, который выполнится, если условие ложно
-    // $(this).closest('.article__faq-item').find('.article__faq-desc').show();
-    // }
+    if ( $(this).closest('.article__faq-item').hide('.article__faq-desc') ) {
+        $('.article__faq-desc').show();
+    } else {
+        $('.article__faq-desc').show();
+        $(this).closest('.article__faq-item').hide('.article__faq-desc');
+        
+    }
 });
 
 $('.menu-icon').click(function () {
