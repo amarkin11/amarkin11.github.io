@@ -14,13 +14,12 @@
 
 $('.js-faq-link').click(function (e) {
     e.preventDefault();
-    if ( $(this).closest('.article__faq-item').hide('.article__faq-desc') ) {
-        $('.article__faq-desc').show();
-    } else {
-        $('.article__faq-desc').show();
-        $(this).closest('.article__faq-item').hide('.article__faq-desc');
-        
-    }
+    // if ( $('.article__faq-desc').hide() ) {
+    //     $(this).closest('.article__faq-item').find('.article__faq-desc').show();
+    // } else {
+    //     $(this).closest('.article__faq-item').find('.article__faq-desc').show();
+    //     $('.article__faq-desc').hide();
+        $(this).closest('.article__faq-item').find('.article__faq-desc').toggle();
 });
 
 $('.menu-icon').click(function () {
