@@ -1,2 +1,21 @@
 // File for scss-vars.
 // For example: main colors, paddings and so on.
+
+// fonts
+
+$glober: 'glober';
+
+// colors
+
+$black: #333;
+$white: #fff;
+$Lblue: rgba(102, 175, 233, 0.6);
+
+// media query
+
+$phone: 479px;
+$fablet: 639px;
+$smallTablet: 767px;
+$tablet: 1023px;
+$desktop: 1279px;
+$largeScreen: 1439px;
