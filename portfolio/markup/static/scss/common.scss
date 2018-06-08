@@ -1,0 +1,228 @@
+// Common styles of the project
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+html {
+    font-family: $glober, Helvetica, sans-serif;
+    color: $black;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $white;
+}
+
+html, body,
+p, h1, h2, h3, h4, h5,
+ol, ul,
+input, button, textarea {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.l-container {
+    width: 1360px;
+    margin: 0 auto;
+    padding: 40px 0 0;
+
+    @include respond-to(largeScreen) {
+        width: 1020px;
+    }
+
+    @include respond-to(desktop) {
+        width: 920px;
+    }
+
+    @include respond-to(tablet) {
+        width: 640px;
+    }
+
+    @include respond-to(fablet) {
+        width: 420px;
+    }
+
+    @include respond-to(phone) {
+        width: 100%;
+    }
+}
+
+.page-title {
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size: 42px;
+    line-height: 48px;
+    animation: fadeInUp 1s;
+}
+
+.card {
+
+    &-list {
+        @include nl();
+        display: flex;
+        flex-wrap: wrap;
+        animation: inLeft 1s;
+    }
+
+    &-item {
+        display: block;
+        margin: 40px 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 0 20px rgba($black, 0.45);
+        overflow: hidden;
+
+        &:focus-within {
+            box-shadow: 0 0 20px $Lblue;
+        }
+
+        &:hover {
+            box-shadow: 0 0 20px $Lblue;
+        }
+
+        &--archive {
+
+            .card-item__link {
+                cursor: default;
+            }
+
+            .card-item__img {
+                filter: grayscale(100%);
+            }
+            
+        }
+
+        &__link {
+            position: relative;
+            display: block;
+            width: 300px;
+            height: 345px;
+            // margin: 40px 20px 0;
+            // border-radius: 4px;
+            // box-sizing: border-box;
+            // box-shadow: 0 0 20px rgba($black, 0.45);
+            // overflow: hidden;
+
+            @include respond-to(desktop) {
+                width: 266px;
+                height: 305px;
+            }
+
+            @include respond-to(tablet) {
+                width: 280px;
+                height: 320px;
+            }
+
+            @include respond-to(fablet) {
+                width: 380px;
+                height: 420px;
+            }
+
+            @include respond-to(phone) {
+                width: 100%;
+                height: 320px;
+            }
+
+            &:hover .card-item__title {
+                top: 50%;
+                opacity: 1;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($black, 0.9);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__title {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 20;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            font-family: 'glober';
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 38px;
+            text-align: center;
+            color: $white;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+
+.footer {
+    margin-top: 80px;
+    padding-bottom: 20px;
+
+    &__copyright {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #c0c0c0;
+    }
+}
+
+@keyframes inLeft {
+    from {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
