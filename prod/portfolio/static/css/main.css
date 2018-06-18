@@ -511,11 +511,11 @@ a {
   box-shadow: 0 0 20px #008ec9;
 }
 
-.card-item--archive .card-item__link {
+.card-item-archive .card-item__link {
   cursor: default;
 }
 
-.card-item--archive .card-item__img {
+.card-item-archive .card-item__img {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
