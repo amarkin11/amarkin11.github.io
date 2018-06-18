@@ -495,7 +495,7 @@ a {
           animation: inLeft 1s;
 }
 
-.card-item {
+.card-list__item {
   display: block;
   margin: 40px 20px 0;
   border-radius: 4px;
@@ -503,24 +503,24 @@ a {
   overflow: hidden;
 }
 
-.card-item:focus-within {
+.card-list__item:focus-within {
   box-shadow: 0 0 20px #008ec9;
 }
 
-.card-item:hover {
+.card-list__item:hover {
   box-shadow: 0 0 20px #008ec9;
 }
 
-.card-item-archive .card-item__link {
+.card-list__item-archive .card-list__item-link {
   cursor: default;
 }
 
-.card-item-archive .card-item__img {
+.card-list__item-archive .card-list__item-img {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
 
-.card-item__link {
+.card-list__item-link {
   position: relative;
   display: block;
   width: 300px;
@@ -528,39 +528,39 @@ a {
 }
 
 @media only screen and (max-width: 1279px) {
-  .card-item__link {
+  .card-list__item-link {
     width: 266px;
     height: 305px;
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  .card-item__link {
+  .card-list__item-link {
     width: 280px;
     height: 320px;
   }
 }
 
 @media only screen and (max-width: 639px) {
-  .card-item__link {
+  .card-list__item-link {
     width: 380px;
     height: 420px;
   }
 }
 
 @media only screen and (max-width: 479px) {
-  .card-item__link {
+  .card-list__item-link {
     width: 100%;
     height: 320px;
   }
 }
 
-.card-item__link:hover .card-item__title {
+.card-list__item-link:hover .card-list__item-title {
   top: 50%;
   opacity: 1;
 }
 
-.card-item__link::before {
+.card-list__item-link::before {
   content: '';
   position: absolute;
   top: 0;
@@ -574,22 +574,22 @@ a {
   transition: all 0.3s ease;
 }
 
-.card-item__link:hover::before {
+.card-list__item-link:hover::before {
   opacity: 1;
 }
 
-.card-item__link:focus {
+.card-list__item-link:focus {
   outline: none;
 }
 
-.card-item__img {
+.card-list__item-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.card-item__title {
+.card-list__item-title {
   position: absolute;
   top: 40%;
   left: 0;

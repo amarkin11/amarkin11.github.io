@@ -1,5 +1,5 @@
 mixin card_item(className, href, img, altName, title)
-	li.card-item(class= className ? ('card-item-' + className) : '')
-		a.card-item__link(href= href, target="_blank")
-			img.card-item__img(src='__static__/img/content/project/' + img, alt= altName)
-			h2.card-item__title!= title
+	li.card-list__item(class= className ? ('card-list__item-' + className) : '')
+		a.card-list__item-link(href= href, target="_blank")
+			img.card-list__item-img(src='__static__/img/content/project/' + img, alt= altName)
+			h2.card-list__item-title!= title
