@@ -480,7 +480,7 @@ a {
           animation: fadeInUp 1s;
 }
 
-.card-list {
+.cards-list {
   margin: 0;
   padding: 0;
   text-indent: 0;
@@ -495,7 +495,7 @@ a {
           animation: inLeft 1s;
 }
 
-.card-list__item {
+.card-item {
   display: block;
   margin: 40px 20px 0;
   border-radius: 4px;
@@ -503,24 +503,24 @@ a {
   overflow: hidden;
 }
 
-.card-list__item:focus-within {
+.card-item:focus-within {
   box-shadow: 0 0 20px #008ec9;
 }
 
-.card-list__item:hover {
+.card-item:hover {
   box-shadow: 0 0 20px #008ec9;
 }
 
-.card-list__item-archive .card-list__item-link {
+.card-item-archive .card-item__link {
   cursor: default;
 }
 
-.card-list__item-archive .card-list__item-img {
+.card-item-archive .card-item__img {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
 
-.card-list__item-link {
+.card-item__link {
   position: relative;
   display: block;
   width: 300px;
@@ -528,39 +528,39 @@ a {
 }
 
 @media only screen and (max-width: 1279px) {
-  .card-list__item-link {
+  .card-item__link {
     width: 266px;
     height: 305px;
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  .card-list__item-link {
+  .card-item__link {
     width: 280px;
     height: 320px;
   }
 }
 
 @media only screen and (max-width: 639px) {
-  .card-list__item-link {
+  .card-item__link {
     width: 380px;
     height: 420px;
   }
 }
 
 @media only screen and (max-width: 479px) {
-  .card-list__item-link {
+  .card-item__link {
     width: 100%;
     height: 320px;
   }
 }
 
-.card-list__item-link:hover .card-list__item-title {
+.card-item__link:hover .card-item__title {
   top: 50%;
   opacity: 1;
 }
 
-.card-list__item-link::before {
+.card-item__link::before {
   content: '';
   position: absolute;
   top: 0;
@@ -574,22 +574,22 @@ a {
   transition: all 0.3s ease;
 }
 
-.card-list__item-link:hover::before {
+.card-item__link:hover::before {
   opacity: 1;
 }
 
-.card-list__item-link:focus {
+.card-item__link:focus {
   outline: none;
 }
 
-.card-list__item-img {
+.card-item__img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.card-list__item-title {
+.card-item__title {
   position: absolute;
   top: 40%;
   left: 0;
