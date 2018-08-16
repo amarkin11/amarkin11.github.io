@@ -69,14 +69,14 @@ a {
     animation: fadeInUp 1s;
 }
 
-.card {
+.cards-list {
+    @include nl();
+    display: flex;
+    flex-wrap: wrap;
+    animation: inLeft 1s;
+}
 
-    &-list {
-        @include nl();
-        display: flex;
-        flex-wrap: wrap;
-        animation: inLeft 1s;
-    }
+.card {
 
     &-item {
         display: block;
@@ -189,7 +189,6 @@ a {
         }
     }
 }
-
 
 .footer {
     margin-top: 80px;
