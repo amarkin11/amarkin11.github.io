@@ -36,15 +36,15 @@
                 <h1 class="page-title">Portfolio</h1>
                 <ul class="cards-list">
                     <li class="card-item">
-                        <a class="card-item__link" href="http://democracymuseum.ru" target="_blank">
-                            <img class="card-item__img" src="static//img/content/project/democracymuseum.jpg" alt="Музей демократии">
-                            <h2 class="card-item__title">Музей демократии</h2>
+                        <a class="card-item__link" href="http://experum.ru/tax-safety" target="_blank">
+                            <img class="card-item__img" src="static//img/content/project/experum.jpg" alt="Experum">
+                            <h2 class="card-item__title">Experum</h2>
                         </a>
                     </li>
                     <li class="card-item">
-                        <a class="card-item__link" href="https://herbhunters.ru" target="_blank">
-                            <img class="card-item__img" src="static//img/content/project/herbhunters.jpg" alt="Охотники за травами 3">
-                            <h2 class="card-item__title">Охотники за травами 3</h2>
+                        <a class="card-item__link" href="http://democracymuseum.ru" target="_blank">
+                            <img class="card-item__img" src="static//img/content/project/democracymuseum.jpg" alt="Музей демократии">
+                            <h2 class="card-item__title">Музей демократии</h2>
                         </a>
                     </li>
                     <li class="card-item">
@@ -101,10 +101,16 @@
                             <h2 class="card-item__title">Дизайн-агенство Игнатия Филиппова</h2>
                         </a>
                     </li>
+                    <li class="card-item">
+                        <a class="card-item__link" href="https://herbhunters.ru" target="_blank">
+                            <img class="card-item__img" src="static//img/content/project/herbhunters.jpg" alt="Охотники за травами 3">
+                            <h2 class="card-item__title">Охотники за травами 3</h2>
+                        </a>
+                    </li>
                     <li class="card-item card-item-archive">
                         <a class="card-item__link" href="/" target="_blank">
                             <img class="card-item__img" src="static//img/content/project/scenter.jpg" alt="СЦ Калининградской области">
-                            <h2 class="card-item__title">СЦ Калининградской области</h2>
+                            <h2 class="card-item__title">СЦ Калининградской области (архив)</h2>
                         </a>
                     </li>
                     <li class="card-item card-item-archive">
@@ -135,9 +141,14 @@
                 </ul>
             </section>
             <footer class="footer">
-                <p class="footer__copyright">Маркин А.С. &copy; 2017-2019</p>
+                <p class="footer__copyright">Маркин А.С. &copy; 2017 - <span>2019</span></p>
             </footer>
         </div>
         <script src="static/js/main.min.js"></script>
+        <script>
+            const copy = document.querySelector('.footer__copyright span');
+            const date = new Date();
+            copy.textContent = date.getFullYear();
+        </script>
     </body>
 </html>
