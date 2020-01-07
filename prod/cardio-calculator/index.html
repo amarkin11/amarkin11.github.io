@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Онлайн-Сервис «Калькулятор Кардио»</title>
+		<meta content="" name="description">
+	    <meta content="" name="keywords">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta content="telephone=no" name="format-detection">
+	    <meta name="HandheldFriendly" content="true">
+		<link href="static/css/main.css" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+	<body>
+		<div class="l-popup">
+			<button class="btn btn-close"></button>
+			<p class="l-popup__title">код для вставки на сайт</p>
+			<div class="l-popup__input">
+				<textarea>здесь должен быть код для вставки на сайт :(</textarea>
+			</div>
+			<div class="btn-wrapper btn-wrapper--center">
+				<button class="btn btn--blue btn-copy">скопировать</button>
+			</div>
+		</div>
+		<div class="container">
+			<h1 class="title">Калькулятор расхода энергии при различных<br>видах кардио-нагрузок</h1>
+			<p class="desc">С помощью данного калькулятора ты можешь вычислить количество израсходованных калорий при различных видах спортивных активностей и кардио-нагрузок. Введи свой вес, далее выбери тип, интенсивность и длительность нагрузок. Ты можешь добавить неограниченное количество видов активности в калькулятор.</p>
+			<div class="data-wrapper">
+				<div class="data-list">
+					<div class="row row-weight">
+						<div class="col">
+							<p class="data-title">вес (кг)</p>
+						</div>
+						<div class="col">
+							<input class="data-input field" id="weight" name="data-input" type="text" maxlength="3">
+						</div>
+					</div>
+					<div class="row row-type">
+						<div class="col">
+							<p class="data-title">тип<br> активности</p>
+							<select class="data-select field" id="type" name="type">
+								<option value="">Выбери тип активности...</option>
+								<option value="бадминтон">бадминтон</option>
+								<option value="баскетбол">баскетбол</option>
+								<option value="бег 8,5 км/ч">бег 8,5 км/ч</option>
+								<option value="бег 10 км/ч">бег 10 км/ч</option>
+								<option value="бег 15 км/ч">бег 15 км/ч</option>
+								<option value="бег на лыжах">бег на лыжах</option>
+								<option value="бокс">бокс</option>
+								<option value="борьба">борьба</option>
+								<option value="велосипед 20 км/ч">велосипед 20 км/ч</option>
+								<option value="велосипед 25 км/ч">велосипед 25 км/ч</option>
+								<option value="велосипед 30 км/ч">велосипед 30 км/ч</option>
+								<option value="велосипед 35+ км/ч">велосипед 35+ км/ч</option>
+								<option value="водное поло">водное поло</option>
+								<option value="волейбол">волейбол</option>
+								<option value="восточные единоборства">восточные единоборства</option>
+								<option value="горный велосипед">горный велосипед</option>
+								<option value="катание на роликах">катание на роликах</option>
+								<option value="горные лыжи">горные лыжи</option>
+								<option value="настольный теннис">настольный теннис</option>
+								<option value="плавание (баттерфляй)">плавание (баттерфляй)</option>
+								<option value="плавание (брасс)">плавание (брасс)</option>
+								<option value="плавание (кроль)">плавание (кроль)</option>
+								<option value="пляжный волейбол">пляжный волейбол</option>
+								<option value="прыжки через скакалку">прыжки через скакалку</option>
+								<option value="спортивная ходьба">спортивная ходьба</option>
+								<option value="теннис">теннис</option>
+								<option value="тренажерный зал">тренажерный зал</option>
+								<option value="тяжелая атлетика">тяжелая атлетика</option>
+								<option value="футбол">футбол</option>
+								<option value="ходьба 6 км/ч">ходьба 6 км/ч</option>
+								<option value="ходьба 7 км/ч">ходьба 7 км/ч</option>
+								<option value="ходьба 8 км/ч">ходьба 8 км/ч</option>
+								<option value="хоккей">хоккей</option>
+							</select>
+						</div>
+						<div class="col">
+							<p class="data-title">длительность<br> (мин)</p>
+							<input class="data-input data-input-duration field" id="duration" type="text" maxlength="3">
+						</div>
+					</div>
+				</div>
+				<div class="btn-wrapper">
+					<button class="btn btn-add" type="button">Добавить</button>
+				</div>
+				<div class="btn-wrapper btn-wrapper--center">
+					<button class="btn btn--blue btn-calc">рассчитать</button>
+					<p class="error-message">Заполнены не все поля</p>
+				</div>
+			</div>
+			<div class="results-wrapper">
+				<div class="results">
+					<p class="results__title">результаты</p>
+					<div class="results__content">
+						<!-- <div class="results__row">
+							<p class="results__text results__text-type">Бег 6 км/ч</p>
+							<p class="results__text results__text-duration">40 мин</p>
+							<p class="results__text results__text-kcal">220 ккал</p>
+							<p class="results__text results__text-type"></p>
+							<p class="results__text results__text-duration"></p>
+							<p class="results__text results__text-kcal"></p>
+						</div> -->
+						<!-- <div class="results__row">
+							<p class="results__text results__text-type">Плавание (кроль)</p>
+							<p class="results__text results__text-duration">20 мин</p>
+							<p class="results__text results__text-kcal">220 ккал</p>
+							<p class="results__text results__text-type"></p>
+							<p class="results__text results__text-duration"></p>
+							<p class="results__text results__text-kcal"></p>
+						</div> -->
+						<!-- <div class="results__row">
+							<p class="results__text results__text-type">Теннис</p>
+							<p class="results__text results__text-duration">30 мин</p>
+							<p class="results__text results__text-kcal">220 ккал</p>
+							<p class="results__text results__text-type"></p>
+							<p class="results__text results__text-duration"></p>
+							<p class="results__text results__text-kcal"></p>
+						</div> -->	
+					</div>
+					<div class="result__total">
+						<div class="result__col">
+							<p class="result__total-text">Итого</p>
+						</div>
+						<div class="result__col">
+							<p class="result__total-text result__total-kcal"></p>
+						</div>
+					</div>
+				</div>
+				<p class="remark">Калькулятор предназначен для приблизительной оценки энергозатрат. Формула, использованная в расчетах, является результатом обработки статистических данных, где значения усреднены, поэтому возможны индивидуальные отклонения.</p>
+				<div class="btn-wrapper btn-wrapper--center">
+					<button class="btn btn--blue btn-again">еще раз</button>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="social">
+					<a href="#" class="social__item social__item--share">share</a>
+					<a href="#" class="social__item social__item--fb">facebook</a>
+					<a href="#" class="social__item social__item--tw">twitter</a>
+					<a href="#" class="social__item social__item--vk">вконтакте</a>
+					<a href="#" class="social__item social__item--ok">одноклассники</a>
+					<a href="#" class="social__item social__item--tg">telegram</a>
+				</div>
+				<div class="logo-img"><img src="static/img/general/logo.png" alt="Men'sHealth"></div>
+				<a href="#" class="pick-up">Забрать на свой сайт</a>
+			</footer>
+		</div>
+		<template id="teamplate-block">
+			<div class="row row-type">
+				<div class="col">
+					<p class="data-title">тип<br> активности</p>
+					<select class="data-select field" id="type" name="type">
+						<option value="">Выбери тип активности...</option>
+						<option value="бадминтон">бадминтон</option>
+						<option value="баскетбол">баскетбол</option>
+						<option value="бег 8,5 км/ч">бег 8,5 км/ч</option>
+						<option value="бег 10 км/ч">бег 10 км/ч</option>
+						<option value="бег 15 км/ч">бег 15 км/ч</option>
+						<option value="бег на лыжах">бег на лыжах</option>
+						<option value="бокс">бокс</option>
+						<option value="борьба">борьба</option>
+						<option value="велосипед 20 км/ч">велосипед 20 км/ч</option>
+						<option value="велосипед 25 км/ч">велосипед 25 км/ч</option>
+						<option value="велосипед 30 км/ч">велосипед 30 км/ч</option>
+						<option value="велосипед 35+ км/ч">велосипед 35+ км/ч</option>
+						<option value="водное поло">водное поло</option>
+						<option value="волейбол">волейбол</option>
+						<option value="восточные единоборства">восточные единоборства</option>
+						<option value="горный велосипед">горный велосипед</option>
+						<option value="катание на роликах">катание на роликах</option>
+						<option value="горные лыжи">горные лыжи</option>
+						<option value="настольный теннис">настольный теннис</option>
+						<option value="плавание (баттерфляй)">плавание (баттерфляй)</option>
+						<option value="плавание (брасс)">плавание (брасс)</option>
+						<option value="плавание (кроль)">плавание (кроль)</option>
+						<option value="пляжный волейбол">пляжный волейбол</option>
+						<option value="прыжки через скакалку">прыжки через скакалку</option>
+						<option value="спортивная ходьба">спортивная ходьба</option>
+						<option value="теннис">теннис</option>
+						<option value="тренажерный зал">тренажерный зал</option>
+						<option value="тяжелая атлетика">тяжелая атлетика</option>
+						<option value="футбол">футбол</option>
+						<option value="ходьба 6 км/ч">ходьба 6 км/ч</option>
+						<option value="ходьба 7 км/ч">ходьба 7 км/ч</option>
+						<option value="ходьба 8 км/ч">ходьба 8 км/ч</option>
+						<option value="хоккей">хоккей</option>
+					</select>
+				</div>
+				<div class="col">
+					<p class="data-title">длительность<br> (мин)</p>
+					<input class="data-input data-input-duration field" id="duration" type="text" maxlength="3">
+				</div>
+			</div>
+		</template>
+		<template id="teamplate-row">
+			<div class="results__row">
+				<p class="results__text results__text-type"></p>
+				<p class="results__text results__text-duration"></p>
+				<p class="results__text results__text-kcal"></p>
+			</div>
+		</template>
+		<!-- <script src="static/js/main.js"></script> -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="static/js/main.js"></script>
+	</body>
+</html>

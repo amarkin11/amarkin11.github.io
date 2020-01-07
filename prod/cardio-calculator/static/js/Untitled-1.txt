@@ -1,0 +1,241 @@
+
+var buttonAdd = document.querySelector('.btn-add');
+var teamplateBlock = document.querySelector('#teamplate-block').content.querySelector('.row-type');
+var dataList = document.querySelector('.data-list');
+var resultType = document.querySelector('.results__text-type');
+
+// ================================================================================
+
+const resultsContent = document.querySelector('.results__content');
+const blockResult = document.querySelector('.results-wrapper');
+const teamplateRow = document.querySelector('#teamplate-row').content.querySelector('.results__row');
+const fields = document.querySelectorAll('.field');
+const errorMessage = document.querySelector('.error-message');
+const buttonCalc = document.querySelector('.btn-calc');
+
+const getResultKcal = function (select, inputDuration) {
+  let inputWeight = document.querySelector('#weight');
+
+  switch (select.value) {
+    case 'бадминтон':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 4.7) + ' ккал';
+      break;
+    case 'баскетбол':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 6.8) + ' ккал';
+      break;
+    case 'бег 8,5 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 8.5) + ' ккал';
+      break;
+    case 'бег 10 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 10.6) + ' ккал';
+      break;
+    case 'бег 15 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 15.3) + ' ккал';
+      break;
+    case 'бег на лыжах':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 8.5) + ' ккал';
+      break;
+    case 'бокс':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 9.5) + ' ккал';
+      break;
+    case 'борьба':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 6.4) + ' ккал';
+      break;
+    case 'велосипед 20 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 8.5) + ' ккал';
+      break;
+    case 'велосипед 25 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 11) + ' ккал';
+      break;
+    case 'велосипед 30 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 13) + ' ккал';
+      break;
+    case 'велосипед 35+ км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 17) + ' ккал';
+      break;
+    case 'водное поло':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 10.6) + ' ккал';
+      break;
+    case 'волейбол':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 3.2) + ' ккал';
+      break;
+    case 'восточные единоборства':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 10.6) + ' ккал';
+      break;
+    case 'горный велосипед':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 9) + ' ккал';
+      break;
+    case 'катание на роликах':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 7.4) + ' ккал';
+      break;
+    case 'горные лыжи':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 6.4) + ' ккал';
+      break;
+    case 'настольный теннис':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 5.8) + ' ккал';
+      break;
+    case 'плавание (баттерфляй)':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 11.6) + ' ккал';
+      break;
+    case 'плавание (брасс)':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 10.6) + ' ккал';
+      break;
+    case 'плавание (кроль)':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 11.6) + ' ккал';
+      break;
+    case 'пляжный волейбол':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 8.5) + ' ккал';
+      break;
+    case 'прыжки через скакалку':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 10.6) + ' ккал';
+      break;
+    case 'спортивная ходьба':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 6.8) + ' ккал';
+      break;
+    case 'теннис':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 7.4) + ' ккал';
+      break;
+    case 'тренажерный зал':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 6) + ' ккал';
+      break;
+    case 'тяжелая атлетика':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 6.2) + ' ккал';
+      break;
+    case 'футбол':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 7.4) + ' ккал';
+      break;
+    case 'ходьба 6 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 4.2) + ' ккал';
+      break;
+    case 'ходьба 7 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 4.7) + ' ккал';
+      break;
+    case 'ходьба 8 км/ч':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 5.3) + ' ккал';
+      break;
+    case 'хоккей':
+      return Math.round((inputDuration.value / 60) * inputWeight.value * 8.5) + ' ккал';
+      break;
+    default:
+      'не верный тип активности';
+  } 
+};
+
+const createRowBlock = function (select, input) {
+  let rowBlock = teamplateRow.cloneNode(true);
+  rowBlock.querySelector('.results__text-type').textContent = select.value;
+  rowBlock.querySelector('.results__text-duration').textContent = input.value  + ' мин';
+  rowBlock.querySelector('.results__text-kcal').textContent = getResultKcal(select, input);
+
+  return rowBlock;
+};
+
+var createBlock = function () {
+  var item = teamplateBlock.cloneNode(true);
+  dataList.appendChild(item);
+};
+
+function createBlock2 (template, block) {
+  block.appendChild(template.cloneNode(true));
+};
+
+const addValueFilds = () => {
+  let select = document.querySelector('.data-select');
+  let input = document.querySelector('.data-input-duration');
+  let resultKcal = document.querySelector('.results__text-kcal');
+  let resultTotalKcal = document.querySelector('.result__total-kcal');
+
+  resultsContent.appendChild(createRowBlock(select, input));
+
+  if (resultKcal !== null) {
+    let total = resultKcal.textContent;
+    resultTotalKcal.textContent = total;
+  }
+  
+};
+
+buttonCalc.addEventListener('click', () => {
+
+  let child = document.querySelector('.results__row');
+
+  fields.forEach((it) => {
+    console.log(it.value);
+    if(it.value === '') {
+      it.classList.add('is-invalid');
+      errorMessage.classList.add('is-show');
+      blockResult.classList.remove('is-show');
+    } else {
+      it.classList.remove('is-invalid');
+      errorMessage.classList.remove('is-show');
+      blockResult.classList.add('is-show');
+    }
+  });
+
+  addValueFilds();
+
+  if (resultsContent.children.length > 1) {
+    resultsContent.removeChild(child);
+  }
+});
+
+var createData = function () {
+  // var inputs = document.querySelectorAll('.data-input');
+  // var resultTotalKcal = document.querySelector('.result__total-kcal');
+
+  // for (var i = 0; i < inputs.length;  i++) {
+  //   console.log(inputs[i]);
+  //   // if(inputs[i].value === '' || selects[i].value === '') {
+  //   // if(inputs[i].value === '') {
+  //   //   inputWeight.classList.add('is-invalid')
+  //   //   inputs[i].classList.add('is-invalid');
+  //   //   // selects[i].classList.add('is-invalid');
+  //   //   errorMessage.classList.add('is-active');
+  //   // } else {
+  //   //   inputWeight.classList.remove('is-invalid')
+  //   //   inputs[i].classList.remove('is-invalid');
+  //   //   // selects[i].classList.remove('is-invalid');
+  //   //   errorMessage.classList.remove('is-active');
+  //   //   blockResult.classList.add('is-active');
+  //   //   resultsContent.appendChild(createRowBlock(selects[i], inputs[i]));
+  //   // }
+  // }
+  // var total = resultKcal.textContent;
+  // resultTotalKcal.textContent = total;
+}
+
+// var openPopupCopy = function () {
+//  var shareButton = document.querySelector('.pick-up');
+//  var popup = document.querySelector('.l-popup');
+//  var closePopup = document.querySelector('.btn-close');
+//  var bodyInactive = document.querySelector('body');
+
+//  shareButton.addEventListener('click', function(e) {
+//    e.preventDefault();
+//    popup.classList.add('is-active');
+//    bodyInactive.classList.add('is-inactive');
+//  });
+
+//  closePopup.addEventListener('click', function() {
+//    popup.classList.remove('is-active');
+//    bodyInactive.classList.remove('is-inactive');
+//  });
+// }
+
+// openPopupCopy();
+
+// var copyText = function () {
+//  var buttonCopy = document.querySelector('.btn-copy');
+
+//  buttonCopy.addEventListener('click', function() {
+//    var fieldCopy = document.querySelector('.l-popup__input input');
+
+//    if(fieldCopy) {
+//      fieldCopy.focus();
+//      fieldCopy.select();
+//      document.execCommand('copy');
+//    }
+//  });
+// }
+
+// copyText();
+
