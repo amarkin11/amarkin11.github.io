@@ -5,28 +5,20 @@ const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 const changed = require('gulp-changed');
 const concat = require('gulp-concat');
-// const data = require('gulp-data');
 const del = require('del');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const imagemin = require('gulp-imagemin');
 const mergeStream = require('merge-stream');
-// const path = require('path');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
 const rename = require('gulp-rename');
 const rev = require('gulp-rev');
 const revReplace = require('gulp-rev-replace');
-// const runSequence = require('run-sequence');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
-
-// const cleanCSS = require("gulp-clean-css");
-// const cache = require('gulp-cache');
-// const rsync = require('gulp-rsync');
-// const watch = require('gulp-watch');
 
 /* List of options */
 const options = {
