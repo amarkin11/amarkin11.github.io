@@ -27,7 +27,7 @@
 @mixin borderRadius($width, $height) {
   width: $width;
   height: $height;
-  border-radius: 100%;
+  border-radius: 50%;
   overflow: hidden;
 }
 

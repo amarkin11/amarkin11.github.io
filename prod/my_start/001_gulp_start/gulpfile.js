@@ -170,7 +170,7 @@ gulp.task('sass', function () {
 		paths.input.sass + 'normalize.scss',
 		paths.input.sass + 'fonts.scss',
 		paths.input.sass + 'main.scss',
-		paths.input.sass + 'components/**/*.scss',
+		paths.input.sass + 'layouts/**/*.scss',
 	])
 	.pipe(plumber())
 	.pipe(gulpif(options.sourceMaps, sourcemaps.init()))
