@@ -102,7 +102,7 @@ gulp.task('image-min', function () {
 });
 
 gulp.task('pug', function () {
-	return gulp.src('./src/pages/*.pug')
+	return gulp.src('./src/pages/**/*.pug')
 	.pipe(plumber())
 	.pipe(pug({
 		pretty: true
@@ -228,7 +228,7 @@ gulp.task('revision', function() {
 
 gulp.task('manifest', function() {
 	const manifest = gulp.src('public/static/rev-manifest.json');
-  return gulp.src('public/*.html')
+  return gulp.src('public/**/*.html')
     .pipe(revReplace({
 			manifest: manifest
 		}))

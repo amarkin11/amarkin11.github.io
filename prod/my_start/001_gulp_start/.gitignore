@@ -1,2 +1,16 @@
+# dependencies
 /node_modules/
+
+# idea & etc.
+.idea
+.vscode
+
+# misc
+.DS_Store
+
+# docker
+/docker/data/*
+
+# git
 /.git/
+!/**/.gitkeep
