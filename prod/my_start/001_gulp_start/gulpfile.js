@@ -19,6 +19,7 @@ const revReplace = require('gulp-rev-replace');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const webpack = require("webpack-stream");
 
 /* List of options */
 const options = {
@@ -64,15 +65,49 @@ const paths = {
 // };
 
 /* Gulp Tasks / Задачи */
+	/* Example for default task javascript*/
 
-gulp.task('javascript', function () {
-	return gulp.src([paths.input.js + '*.js'])
+// gulp.task('javascript', function () {
+// 	return gulp.src([paths.input.js + '*.js'])
+// 	.pipe(plumber())
+// 	.pipe(gulpif(options.sourceMaps, sourcemaps.init()))
+// 	.pipe(babel({
+// 		presets: ['@babel/env']
+// 	}))
+// 	.pipe(concat('main.js'))
+// 	.pipe(gulpif(options.uglifyJS, uglify()))
+// 	.pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
+// 	.pipe(gulp.dest(paths.output.js))
+// 	.pipe(browserSync.stream());
+// });
+
+/* Example for modules es6 task javascript*/
+
+gulp.task('javascript', () => {
+	return gulp.src([paths.input.js + 'main.js'])
+	.pipe(webpack({
+		mode: 'none',
+		output: {
+			filename: 'main.js'
+		},
+		watch: false,
+		module: {
+			rules: [
+				{
+					test: /\.m?js$/,
+					exclude: /(node_modules|bower_components)/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
+				}
+			]
+		}
+	}))
 	.pipe(plumber())
 	.pipe(gulpif(options.sourceMaps, sourcemaps.init()))
-	.pipe(babel({
-		presets: ['@babel/env']
-	}))
-	.pipe(concat('main.js'))
 	.pipe(gulpif(options.uglifyJS, uglify()))
 	.pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
 	.pipe(gulp.dest(paths.output.js))
