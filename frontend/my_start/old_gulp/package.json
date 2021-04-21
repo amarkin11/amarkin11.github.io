@@ -1,0 +1,42 @@
+{
+  "name": "gulp_start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "build:clean": "gulp build-clean"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.4.6",
+    "browser-sync": "^2.9.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-data": "^1.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rm": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "run-sequence": "^2.2.1"
+  },
+  "keywords": [
+    "gulp",
+    "gulp-babel",
+    "pug",
+    "sass",
+    "browsersync"
+  ],
+  "dependencies": {
+    "merge-stream": "^2.0.0"
+  }
+}
