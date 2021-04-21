@@ -1,0 +1,60 @@
+// Mixins.
+
+@mixin nl {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+  list-style-position: outside;
+}
+
+@mixin cf {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .lt-ie8 & {
+    zoom: 1;
+  }
+}
+
+// You can add your own mixins here:
+
+@mixin respond-to($media) {
+  @if $media == small_phone {
+    @media only screen and (max-width: $xxs) { @content; }
+  }
+  @if $media == phone {
+    @media only screen and (max-width: $xs) { @content; }
+  }
+  @else if $media == fablet {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @else if $media == small_tablet {
+    @media only screen and (max-width: $sm) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $md) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (max-width: $wd) { @content; }
+  }
+  @else if $media == large {
+    @media only screen and (max-width: $lg) { @content; }
+  }
+  @else if $media == hd {
+    @media only screen and (max-width: $xxl) { @content; }
+  }
+  @else if $media == iphone_four {
+    @media only screen and (max-width: $phone) and (max-height: 480px) { @content; }
+  }
+  @else {
+    @media only screen and (max-width: $media) { @content; }
+  }
+}
