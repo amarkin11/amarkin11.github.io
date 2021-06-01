@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 html {
   // height: 100%;
@@ -77,7 +77,10 @@ select {
 
 button {
 
-  &.disable {
+  &.disable,
+  &:disabled {
+    // color: $white;
+    // background-color: $silver;
     pointer-events: none;
   }
 }

@@ -16,8 +16,6 @@ $black: #000;
 $mineShaft: #333;
 $white: #fff;
 
-$overlay: rgba($black, 0.5);
-
 // Font size
 
 $basicFontSize: 10px;
@@ -25,4 +23,5 @@ $openSans: 'Open Sans', 'Helvetica', sans-serif;
 
 //others
 
+$overlay: rgba($black, 0.5);
 $basicTransition: all 0.3s;
