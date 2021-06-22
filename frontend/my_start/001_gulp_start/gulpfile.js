@@ -24,7 +24,7 @@ const webpack = require("webpack-stream");
 /* List of options */
 const options = {
   uglifyJS: true,
-	sourceMaps: true
+  sourceMaps: true
 };
 
 /* List of directories */
@@ -32,15 +32,15 @@ const paths = {
   input: {
     sass: './src/static/scss/',
     js: './src/static/js/',
-		images: './src/static/img/',
-		fonts: './src/static/fonts/'
+    images: './src/static/img/',
+    fonts: './src/static/fonts/'
   },
 
   output: {
     css: './public/static/css/',
     js: './public/static/js/',
-		images: './public/static/img/',
-		fonts: './public/static/fonts/'
+    images: './public/static/img/',
+    fonts: './public/static/fonts/'
   },
   public: './public'
 };
@@ -84,76 +84,76 @@ const paths = {
 /* Example for modules es6 task javascript*/
 
 gulp.task('javascript', () => {
-	return gulp.src([paths.input.js + 'main.js'])
-	.pipe(webpack({
-		mode: 'none',
-		output: {
-			filename: 'main.js'
-		},
-		watch: false,
-		module: {
-			rules: [
-				{
-					test: /\.m?js$/,
-					exclude: /(node_modules|bower_components)/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env']
-						}
-					}
-				}
-			]
-		}
-	}))
-	.pipe(plumber())
-	.pipe(gulpif(options.sourceMaps, sourcemaps.init()))
-	.pipe(gulpif(options.uglifyJS, uglify()))
-	.pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
-	.pipe(gulp.dest(paths.output.js))
-	.pipe(browserSync.stream());
+  return gulp.src([paths.input.js + 'main.js'])
+  .pipe(webpack({
+    mode: 'none',
+    output: {
+      filename: 'main.js'
+    },
+    watch: false,
+    module: {
+      rules: [
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        }
+      ]
+    }
+  }))
+  .pipe(plumber())
+  .pipe(gulpif(options.sourceMaps, sourcemaps.init()))
+  .pipe(gulpif(options.uglifyJS, uglify()))
+  .pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
+  .pipe(gulp.dest(paths.output.js))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('js-vendor', function () {
-	return gulp.src([paths.input.js + 'vendor/**/*.js'])
-	.pipe(plumber())
-	.pipe(gulpif(options.sourceMaps, sourcemaps.init()))
-	.pipe(babel({
-		presets: ['@babel/env']
-	}))
-	.pipe(concat('vendor.js'))
-	.pipe(gulpif(options.uglifyJS, uglify()))
-	.pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
-	.pipe(gulp.dest(paths.output.js + 'vendor/'))
-	.pipe(browserSync.stream());
+  return gulp.src([paths.input.js + 'vendor/**/*.js'])
+  .pipe(plumber())
+  .pipe(gulpif(options.sourceMaps, sourcemaps.init()))
+  .pipe(babel({
+    presets: ['@babel/env']
+  }))
+  .pipe(concat('vendor.js'))
+  .pipe(gulpif(options.uglifyJS, uglify()))
+  .pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
+  .pipe(gulp.dest(paths.output.js + 'vendor/'))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('image-min', function () {
-	return gulp.src(paths.input.images + '**/*')
-	.pipe(plumber())
-	.pipe(changed(paths.output.images))
-	.pipe(imagemin())
-	.pipe(gulp.dest(paths.output.images));
+  return gulp.src(paths.input.images + '**/*')
+  .pipe(plumber())
+  .pipe(changed(paths.output.images))
+  .pipe(imagemin())
+  .pipe(gulp.dest(paths.output.images));
 });
 
 gulp.task('pug', function () {
-	return gulp.src('./src/pages/**/*.pug')
-	.pipe(plumber())
-	.pipe(pug({
-		pretty: true
-	}))
-	.pipe(gulp.dest(paths.public))
-	.pipe(browserSync.stream());
+  return gulp.src('./src/pages/**/*.pug')
+  .pipe(plumber())
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(gulp.dest(paths.public))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', function () {
-	return gulp.src(paths.input.fonts + '**/*.+(woff|woff2)')
-	.pipe(plumber())
-	.pipe(gulp.dest(paths.output.fonts));
+  return gulp.src(paths.input.fonts + '**/*.+(woff|woff2)')
+  .pipe(plumber())
+  .pipe(gulp.dest(paths.output.fonts));
 });
 
 gulp.task('build-clean', function () {
-	return del(paths.public);
+  return del(paths.public);
 });
 
 /* Example for Django */
@@ -169,14 +169,14 @@ gulp.task('build-clean', function () {
 // }));
 
 gulp.task('browser-sync', function (done) {
-	browserSync.init({
-		server: {
-			baseDir: paths.public
-		},
-		notify: false,
-	});
+  browserSync.init({
+    server: {
+      baseDir: paths.public
+    },
+    notify: false,
+  });
 
-	done();
+  done();
 });
 
 /* Example for Django */
@@ -193,99 +193,99 @@ gulp.task('browser-sync', function (done) {
 // });
 
 gulp.task('sass', function () {
-	return gulp.src([
-		paths.input.sass + 'normalize.scss',
-		paths.input.sass + 'fonts.scss',
-		paths.input.sass + 'main.scss',
-		paths.input.sass + 'layouts/**/*.scss',
-	])
-	.pipe(plumber())
-	.pipe(gulpif(options.sourceMaps, sourcemaps.init()))
-	.pipe(sass({
-		includePaths: [paths.input.sass],
-		outputStyle: 'compressed'
-	}))
-	.pipe(concat('main.css'))
-	.pipe(postcss([autoprefixer()]))
-	.pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
-	.pipe(gulp.dest(paths.output.css))
-	.pipe(browserSync.stream());
+  return gulp.src([
+    paths.input.sass + 'normalize.scss',
+    paths.input.sass + 'fonts.scss',
+    paths.input.sass + 'main.scss',
+    paths.input.sass + 'layouts/**/*.scss',
+  ])
+  .pipe(plumber())
+  .pipe(gulpif(options.sourceMaps, sourcemaps.init()))
+  .pipe(sass({
+    includePaths: [paths.input.sass],
+    outputStyle: 'compressed'
+  }))
+  .pipe(concat('main.css'))
+  .pipe(postcss([autoprefixer()]))
+  .pipe(gulpif(options.sourceMaps, sourcemaps.write('../maps')))
+  .pipe(gulp.dest(paths.output.css))
+  .pipe(browserSync.stream());
 });
 
 gulp.task('sass-vendor', function () {
-	let sassStream;
-	let cssStream;
+  let sassStream;
+  let cssStream;
 
-	sassStream = gulp.src([
-		paths.input.sass + ['vendor/**/*.scss']
-	])
-	.pipe(plumber())
-	.pipe(sass({
-		includePaths: [paths.input.sass],
-		outputStyle: 'compressed'
-	}));
+  sassStream = gulp.src([
+    paths.input.sass + ['vendor/**/*.scss']
+  ])
+  .pipe(plumber())
+  .pipe(sass({
+    includePaths: [paths.input.sass],
+    outputStyle: 'compressed'
+  }));
 
-	cssStream = gulp.src([
-		paths.input.sass + ['vendor/**/*.css']
-	])
-	.pipe(plumber());
+  cssStream = gulp.src([
+    paths.input.sass + ['vendor/**/*.css']
+  ])
+  .pipe(plumber());
 
-	return mergeStream(sassStream, cssStream)
-		.pipe(concat('vendor.css'))
-		.pipe(postcss([autoprefixer()]))
-		.pipe(gulp.dest(paths.output.css + 'vendor/'))
-		.pipe(browserSync.stream());
+  return mergeStream(sassStream, cssStream)
+    .pipe(concat('vendor.css'))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(gulp.dest(paths.output.css + 'vendor/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('revision', function() {
 
-	let css;
-	let js;
+  let css;
+  let js;
 
-	css = gulp.src([paths.output.css + '/*.css'])
-		.pipe(rev())
-		.pipe(gulp.dest(paths.output.css))
-		.pipe(rename({
-			dirname: 'static/css'
-		}))
-		
-	js = gulp.src([paths.output.js + '/*.js'])
-		.pipe(rev())
-		.pipe(gulp.dest(paths.output.js))
-		.pipe(rename({
-			dirname: 'static/js'
-		}))
+  css = gulp.src([paths.output.css + '/*.css'])
+    .pipe(rev())
+    .pipe(gulp.dest(paths.output.css))
+    .pipe(rename({
+      dirname: 'static/css'
+    }))
+    
+  js = gulp.src([paths.output.js + '/*.js'])
+    .pipe(rev())
+    .pipe(gulp.dest(paths.output.js))
+    .pipe(rename({
+      dirname: 'static/js'
+    }))
 
-	return mergeStream(css, js)
-		.pipe(rev.manifest())
-		.pipe(gulp.dest(paths.public + '/static/'));
+  return mergeStream(css, js)
+    .pipe(rev.manifest())
+    .pipe(gulp.dest(paths.public + '/static/'));
 });
 
 gulp.task('manifest', function() {
-	const manifest = gulp.src('public/static/rev-manifest.json');
+  const manifest = gulp.src('public/static/rev-manifest.json');
   return gulp.src('public/**/*.html')
     .pipe(revReplace({
-			manifest: manifest
-		}))
+      manifest: manifest
+    }))
     .pipe(gulp.dest('public/'));
 });
 
 gulp.task('revReplace', gulp.series('revision', 'manifest'));
 
 gulp.task('develop', gulp.series('build-clean', 
-	gulp.parallel('fonts', 'sass', 'sass-vendor', 'javascript', 'js-vendor', 'image-min', 'pug')
+  gulp.parallel('fonts', 'sass', 'sass-vendor', 'javascript', 'js-vendor', 'image-min', 'pug')
 ));
 
 gulp.task('build-dist', gulp.series('build-clean', 
-	gulp.parallel('fonts', 'sass', 'sass-vendor', 'javascript', 'js-vendor', 'image-min', 'pug'), 'revReplace'
+  gulp.parallel('fonts', 'sass', 'sass-vendor', 'javascript', 'js-vendor', 'image-min', 'pug'), 'revReplace'
 ));
 
 gulp.task('watch', function () {
-	gulp.watch(paths.input.fonts + '**/*', gulp.series('fonts'));
-	gulp.watch(paths.input.sass + '**/*.scss', gulp.series('sass', 'sass-vendor'));
-	gulp.watch(paths.input.js + '**/*.js', gulp.series('javascript', 'js-vendor'));
-	gulp.watch(paths.input.images + '**/*', gulp.series('image-min'));
-	gulp.watch(['./src/**/*.pug', './src/**/*.json'], gulp.series('pug'));
+  gulp.watch(paths.input.fonts + '**/*', gulp.series('fonts'));
+  gulp.watch(paths.input.sass + '**/*.scss', gulp.series('sass', 'sass-vendor'));
+  gulp.watch(paths.input.js + '**/*.js', gulp.series('javascript', 'js-vendor'));
+  gulp.watch(paths.input.images + '**/*', gulp.series('image-min'));
+  gulp.watch(['./src/**/*.pug', './src/**/*.json'], gulp.series('pug'));
 });
 
 gulp.task('build', gulp.series('build-dist'));
