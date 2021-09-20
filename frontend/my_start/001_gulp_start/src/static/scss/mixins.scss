@@ -8,22 +8,6 @@
   list-style-position: outside;
 }
 
-@mixin cf {
-  &:before,
-  &:after {
-    display: table;
-    content: '';
-  }
-
-  &:after {
-    clear: both;
-  }
-
-  .lt-ie8 & {
-    zoom: 1;
-  }
-}
-
 @mixin borderRadius($width, $height) {
   width: $width;
   height: $height;

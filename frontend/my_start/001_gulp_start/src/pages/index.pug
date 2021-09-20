@@ -1,11 +1,11 @@
-include ../layouts/head/head.pug
-include ../layouts/components/header.pug
-include ../layouts/components/footer.pug
+include ../layouts/head/head
+include ../layouts/components/header
+include ../layouts/components/footer
 
 doctype html
 html(lang='ru')
   head
-    +head('Main')
+    +head('Main', '')
 
   body
     .site.page-main
@@ -14,5 +14,4 @@ html(lang='ru')
         //- .container
         h1 hello world
       +footer
-    //- Main scripts
     +scripts
