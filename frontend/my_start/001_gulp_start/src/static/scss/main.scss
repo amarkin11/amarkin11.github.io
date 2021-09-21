@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 html {
   // height: 100%;
@@ -20,7 +20,8 @@ ul,
 input,
 button,
 textarea,
-blockquote {
+blockquote,
+figure {
   padding: 0;
   margin: 0;
 }
@@ -29,7 +30,7 @@ body {
   max-width: 2560px;
   margin: 0 auto;
   height: 100%;
-  font-family: $openSans;
+  font-family: $primaryFont;
   color: $black;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -77,9 +78,32 @@ select {
 
 button {
 
-  &.disable {
+  &.disable,
+  &:disabled {
+    // color: $white;
+    // background-color: $silver;
     pointer-events: none;
   }
+}
+
+input[type="search"] {
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  // &:-webkit-autofill {
+  //   transition: background-color 5000s ease-in-out 0s;
+  //   -webkit-text-fill-color: $white !important;
+
+  //   &:hover,
+  //   &:focus,
+  //   &:active {
+  //     transition: background-color 5000s ease-in-out 0s;
+  //     -webkit-text-fill-color: $white !important;
+  //   }
+  // }
 }
 
 // .container {

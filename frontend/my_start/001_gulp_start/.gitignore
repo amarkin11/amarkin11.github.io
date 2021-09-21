@@ -1,17 +1,30 @@
 # dependencies
-/node_modules/
+node_modules
 package-lock.json
 
-# idea & etc.
+# editors
 .idea
 .vscode
 
 # misc
 .DS_Store
 
-# docker
+# data
 /docker/data/*
+/django_app/media/*
+/django_app/static/*
+/public/
+
+# extensions
+*.pyc
+*.swp
+*.rdb
+*.log
+*.ipynb
+*.sqlite3
+*.sql
 
 # git
 /.git/
+!.gitignore
 !/**/.gitkeep
