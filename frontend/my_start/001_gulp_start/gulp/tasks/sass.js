@@ -6,7 +6,7 @@ const { src, dest } = require('gulp'),
       mergeStream = require('merge-stream'),
       plumber = require('gulp-plumber'),
       postcss = require('gulp-postcss'),
-      sass = require('gulp-sass'),
+      sass = require('gulp-sass')(require('sass')),
       sourcemaps = require('gulp-sourcemaps'),
       config = require('../config');
 

@@ -10,6 +10,7 @@ const { series, parallel } = require('gulp'),
       { sassCompile, sassVendorCompile } = require(`${path}/sass`),
       { jsCompile, jsVendorCompile, jsLibsCompile } = require(`${path}/scripts`),
       _browserSync = require(`${path}/server`),
+      sitemapCompile = require(`${path}/sitemap`),
       _watch = require(`${path}/watch`);
 
 const initDevelop = series(delPublic, parallel(
@@ -32,7 +33,7 @@ const initProd = series(delPublic, parallel(
   jsLibsCompile,
   imagesCompress,
   pugCompile
-), revisionReplace);
+), sitemapCompile, revisionReplace);
 
 exports.build = series(initProd);
 exports.default = series(initDevelop, parallel(_watch, _browserSync));

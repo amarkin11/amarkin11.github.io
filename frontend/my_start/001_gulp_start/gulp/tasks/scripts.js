@@ -6,7 +6,8 @@ const { src, dest } = require('gulp'),
       plumber = require('gulp-plumber'),
       sourcemaps = require('gulp-sourcemaps'),
       uglify = require('gulp-uglify'),
-      webpack = require("webpack-stream"),
+      webpack = require('webpack'),
+      gulpWebpack = require("webpack-stream"),
       config = require('../config');
 
 // function javascriptCompile() {
@@ -25,7 +26,7 @@ const { src, dest } = require('gulp'),
 
 function jsCompile() {
   return src([config.paths.input.js + 'main.js'])
-    .pipe(webpack({
+    .pipe(gulpWebpack({
       mode: 'none',
       output: {
         filename: 'main.js'
@@ -45,7 +46,7 @@ function jsCompile() {
           }
         ]
       }
-    }))
+    }, webpack))
     .pipe(plumber())
     .pipe(gulpif(config.options.sourceMaps, sourcemaps.init()))
     .pipe(gulpif(config.options.uglifyJS, uglify()))
