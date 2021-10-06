@@ -1,45 +1,28 @@
 const { src, dest, series } = require('gulp'),
-      mergeStream = require('merge-stream'),
-      rename = require('gulp-rename'),
-      rev = require('gulp-rev'),
-      revReplace = require('gulp-rev-replace'),
+      { revision, manifestFile } = require('gulp-rev-all'),
+      revRewrite = require('gulp-rev-rewrite'),
+      { readFileSync } = require('fs');
       config = require('../config');
 
-function revision() {
+function _revision() {
 
-  let css;
-  let js;
-
-  css = src([config.paths.output.css + '/**/*.css'])
-    .pipe(rev())
-    .pipe(dest(config.paths.output.css))
-    .pipe(rename({
-      dirname: 'static/css'
-    }))
-    
-  js = src([
+  return src([
+      config.paths.output.css + '/**/*.css',
       config.paths.output.js + '/*.js',
       config.paths.output.js + '/vendor/*.js'
     ])
-      .pipe(rev())
-      .pipe(dest(config.paths.output.js))
-      .pipe(rename({
-        dirname: 'static/js'
-      }))
-
-  return mergeStream(css, js)
-    .pipe(rev.manifest())
-    .pipe(dest(config.paths.public + '/static/'));
+    .pipe(revision())
+    .pipe(dest(config.paths.public + '/static/'))
+    .pipe(manifestFile())
+    .pipe(dest(config.paths.public + '/static/'))
 };
 
-function manifest() {
-  const _manifest = src('public/static/rev-manifest.json');
+function _rewrite() {
+  const manifest = readFileSync(config.paths.public + '/static/rev-manifest.json');
 
-  return src('public/**/*.html')
-    .pipe(revReplace({
-      manifest: _manifest
-    }))
-    .pipe(dest('public/'));
+  return src(config.paths.public + '/**/*.html')
+    .pipe(revRewrite({ manifest }))
+    .pipe(dest(config.paths.public));
 };
 
-module.exports = series(revision, manifest);
+module.exports = series(_revision, _rewrite);

@@ -2,8 +2,9 @@
 
 const { series, parallel } = require('gulp'),
       path = './gulp/tasks',
-      delPublic = require(`${path}/clean`),
+      { delPublic, delStaticFiles } = require(`${path}/clean`),
       fontsCompile = require(`${path}/fonts`),
+      filesCompile = require(`${path}/files`),
       imagesCompress = require(`${path}/images`),
       pugCompile = require(`${path}/pug`),
       revisionReplace = require(`${path}/revesion`),
@@ -15,6 +16,7 @@ const { series, parallel } = require('gulp'),
 
 const initDevelop = series(delPublic, parallel(
   fontsCompile,
+  filesCompile,
   sassCompile,
   sassVendorCompile,
   jsCompile,
@@ -26,6 +28,7 @@ const initDevelop = series(delPublic, parallel(
 
 const initProd = series(delPublic, parallel(
   fontsCompile,
+  filesCompile,
   sassCompile,
   sassVendorCompile,
   jsCompile,
@@ -33,7 +36,7 @@ const initProd = series(delPublic, parallel(
   jsLibsCompile,
   imagesCompress,
   pugCompile
-), sitemapCompile, revisionReplace);
+), sitemapCompile, revisionReplace, delStaticFiles);
 
 exports.build = series(initProd);
 exports.default = series(initDevelop, parallel(_watch, _browserSync));

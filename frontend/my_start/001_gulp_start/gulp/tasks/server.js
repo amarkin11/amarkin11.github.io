@@ -6,6 +6,7 @@ function _browserSync(done) {
     server: {
       baseDir: config.paths.public
     },
+    watch: true,
     notify: false,
   });
 

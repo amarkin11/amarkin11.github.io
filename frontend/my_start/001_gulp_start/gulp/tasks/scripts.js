@@ -1,11 +1,10 @@
 const { src, dest } = require('gulp'),
       babel = require('gulp-babel'),
       browserSync = require('browser-sync').create(),
-      concat = require('gulp-concat'),
-      gulpif = require('gulp-if'),
+      concat = require('regme-gulp-concat'),
       plumber = require('gulp-plumber'),
       sourcemaps = require('gulp-sourcemaps'),
-      uglify = require('gulp-uglify'),
+      uglify = require('gulp-uglify-es').default,
       webpack = require('webpack'),
       gulpWebpack = require("webpack-stream"),
       config = require('../config');
@@ -13,13 +12,13 @@ const { src, dest } = require('gulp'),
 // function javascriptCompile() {
 // 	return src([config.paths.input.js + '*.js'])
 // 	.pipe(plumber())
-// 	.pipe(gulpif(config.options.sourceMaps, sourcemaps.init()))
+// 	.pipe(sourcemaps.init())
 // 	.pipe(babel({
 // 		presets: ['@babel/env']
 // 	}))
 // 	.pipe(concat('main.js'))
-// 	.pipe(gulpif(config.options.uglifyJS, uglify()))
-// 	.pipe(gulpif(config.options.sourceMaps, sourcemaps.write('../maps')))
+// 	.pipe(uglify())
+// 	.pipe(sourcemaps.write('../maps'))
 // 	.pipe(dest(config.paths.output.js))
 // 	.pipe(browserSync.stream());
 // });
@@ -48,9 +47,9 @@ function jsCompile() {
       }
     }, webpack))
     .pipe(plumber())
-    .pipe(gulpif(config.options.sourceMaps, sourcemaps.init()))
-    .pipe(gulpif(config.options.uglifyJS, uglify()))
-    .pipe(gulpif(config.options.sourceMaps, sourcemaps.write('../maps')))
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(sourcemaps.write('../maps'))
     .pipe(dest(config.paths.output.js))
     .pipe(browserSync.stream());
 };
@@ -58,14 +57,14 @@ function jsCompile() {
 function jsVendorCompile() {
   return src([config.paths.input.js + 'vendor/**/*.js'])
     .pipe(plumber())
-    .pipe(gulpif(config.options.sourceMaps, sourcemaps.init()))
+    .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(concat('vendor.js'))
-    .pipe(gulpif(config.options.uglifyJS, uglify()))
-    .pipe(gulpif(config.options.sourceMaps, sourcemaps.write('../maps')))
-    .pipe(dest(config.paths.output.js + 'vendor/'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(dest(config.paths.output.js))
     .pipe(browserSync.stream());
 };
 
