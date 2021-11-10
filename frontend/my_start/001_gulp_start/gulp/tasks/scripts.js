@@ -71,9 +71,6 @@ function jsVendorCompile() {
 function jsLibsCompile() {
   return src([config.paths.input.js + 'libs/*.js'])
     .pipe(plumber())
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
     .pipe(dest(config.paths.output.js + 'libs/'))
     .pipe(browserSync.stream());
 };
