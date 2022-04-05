@@ -33,6 +33,7 @@
     "del": "^6.0.0",
     "fs": "0.0.1-security",
     "gulp-changed": "^4.0.3",
+    "gulp-concat": "^2.6.1",
     "gulp-if": "^3.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-pug": "^5.0.0",
@@ -44,7 +45,6 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify-es": "^3.0.0",
     "merge-stream": "^2.0.0",
-    "regme-gulp-concat": "^2.6.2",
     "sass": "^1.42.1",
     "webpack": "^5.53.0",
     "webpack-stream": "^7.0.0"

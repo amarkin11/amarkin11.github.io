@@ -9,7 +9,6 @@ function _revision() {
   return src([
       config.paths.output.css + '/**/*.css',
       config.paths.output.js + '/*.js',
-      config.paths.output.js + '/vendor/*.js'
     ])
     .pipe(revision())
     .pipe(dest(config.paths.public + '/static/'))

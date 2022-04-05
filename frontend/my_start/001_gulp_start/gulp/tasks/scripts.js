@@ -1,7 +1,7 @@
 const { src, dest } = require('gulp'),
       babel = require('gulp-babel'),
       browserSync = require('browser-sync').create(),
-      concat = require('regme-gulp-concat'),
+      concat = require('gulp-concat'),
       plumber = require('gulp-plumber'),
       sourcemaps = require('gulp-sourcemaps'),
       uglify = require('gulp-uglify-es').default,
