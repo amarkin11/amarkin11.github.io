@@ -1,4 +1,6 @@
-const src = './src',
+const argv = require('yargs').argv,
+      devMode = argv._[0] !== 'build',
+      src = './src',
       public = './public';
 
 module.exports = {
@@ -19,4 +21,8 @@ module.exports = {
     },
     public: public
   },
+  mode: {
+    dev: devMode,
+    prod: !devMode
+  }
 };
