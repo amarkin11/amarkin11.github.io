@@ -1,5 +1,6 @@
 const { watch, parallel } = require('gulp'),
       fontsCompile = require('./fonts'),
+      filesCompile = require('./files'),
       imagesCompress = require('./images'),
       pugCompile = require('./pug'),
       { sassCompile, sassVendorCompile } = require('./sass'),
@@ -8,6 +9,7 @@ const { watch, parallel } = require('gulp'),
 
 function _watch() {
   watch(config.paths.input.fonts + '**/*', parallel(fontsCompile));
+  watch(config.paths.input.files + '**/*', parallel(filesCompile));
   watch(config.paths.input.sass + '**/*.scss', parallel(sassCompile, sassVendorCompile));
   watch(config.paths.input.js + '**/*.js', parallel(jsCompile, jsVendorCompile, jsLibsCompile));
   watch(config.paths.input.images + '**/*', parallel(imagesCompress));
