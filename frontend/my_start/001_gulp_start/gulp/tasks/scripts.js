@@ -2,6 +2,7 @@ const { src, dest } = require('gulp'),
       babel = require('gulp-babel'),
       browserSync = require('browser-sync').create(),
       concat = require('gulp-concat'),
+      gulpif = require('gulp-if'),
       plumber = require('gulp-plumber'),
       sourcemaps = require('gulp-sourcemaps'),
       uglify = require('gulp-uglify-es').default,
@@ -47,9 +48,9 @@ function jsCompile() {
       }
     }, webpack))
     .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulpif(config.mode.dev, sourcemaps.init()))
+    .pipe(gulpif(config.mode.prod, uglify()))
+    .pipe(gulpif(config.mode.dev, sourcemaps.write('../maps')))
     .pipe(dest(config.paths.output.js))
     .pipe(browserSync.stream());
 };
@@ -57,13 +58,13 @@ function jsCompile() {
 function jsVendorCompile() {
   return src([config.paths.input.js + 'vendor/**/*.js'])
     .pipe(plumber())
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(config.mode.dev, sourcemaps.init()))
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(concat('vendor.js'))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulpif(config.mode.dev, sourcemaps.write('../maps')))
+    .pipe(gulpif(config.mode.prod, uglify()))
     .pipe(dest(config.paths.output.js))
     .pipe(browserSync.stream());
 };

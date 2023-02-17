@@ -2,6 +2,7 @@ const { src, dest } = require('gulp'),
       autoprefixer = require('autoprefixer'),
       browserSync = require('browser-sync').create(),
       concat = require('gulp-concat'),
+      gulpif = require('gulp-if'),
       mergeStream = require('merge-stream'),
       plumber = require('gulp-plumber'),
       postcss = require('gulp-postcss'),
@@ -17,14 +18,14 @@ function sassCompile() {
     config.paths.input.sass + 'layouts/**/*.scss',
   ])
     .pipe(plumber())
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(config.mode.dev, sourcemaps.init()))
     .pipe(sass({
       includePaths: [config.paths.input.sass],
-      outputStyle: 'compressed'
+      outputStyle: config.mode.dev ? 'expanded' : 'compressed'
     }).on('error', sass.logError))
     .pipe(concat('main.css'))
     .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulpif(config.mode.dev, sourcemaps.write('../maps')))
     .pipe(dest(config.paths.output.css))
     .pipe(browserSync.stream());
 };
@@ -46,7 +47,7 @@ function sassVendorCompile() {
   return mergeStream(sassStream, cssStream)
     .pipe(plumber())
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: config.mode.dev ? 'expanded' : 'compressed'
     }).on('error', sass.logError))
     .pipe(concat('vendor.css'))
     .pipe(postcss([autoprefixer()]))
