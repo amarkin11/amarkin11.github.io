@@ -1,0 +1,8 @@
+mixin logo(href, className, img, altTitle)
+  a.logo(class='logo--' + className  href= href)
+    img.contain(src='/static/img/general/logo/' + img, alt= altTitle)
+
+mixin logoList()
+  .logo-list
+    .logo-list__item
+      +logo()
