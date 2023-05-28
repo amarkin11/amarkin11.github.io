@@ -1,0 +1,22 @@
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__item {
+
+    // @include respond-to(hover) {
+
+    //   &:hover {
+
+    //     path {
+    //       fill: $red;
+    //     }
+    //   }
+    // }
+
+    path {
+      transition: $basicTransition;
+    }
+  }
+}

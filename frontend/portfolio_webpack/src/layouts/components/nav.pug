@@ -1,0 +1,11 @@
+mixin navMain()
+  -
+    let items = [
+      {'attr': 'about', 'title': 'о мероприятии'},
+      {'attr': 'program', 'title': 'программа форума'},
+      {'attr': 'party', 'title': 'спикеры и участники'},
+      {'attr': 'registration', 'title': 'регистрация'}
+    ]
+  nav.nav
+    each item in items
+      button.nav__item.js-nav(data-nav= item.attr)!= item.title
