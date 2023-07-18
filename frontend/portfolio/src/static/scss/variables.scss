@@ -1,0 +1,34 @@
+// File for scss-vars.
+// For example: main colors, paddings and so on.
+
+// Device dimensions
+
+$phone: 320px;
+$xxs: 374px;
+$xs: 479px;
+$mobile: 639px;
+$sm: 767px;
+$md: 1024px;
+$wd: 1279px;
+$lg: 1439px;
+$xxl: 1919px;
+
+// Colors
+
+$black: #000;
+$blue: #008ec9;
+$mineShaft: #262626;
+$white: #fff;
+
+$basicOverlay: rgba($black, 0.5);
+$basicGradient: linear-gradient(180deg, rgba($black, 0) 0%, rgba($black, 0.8) 100%);
+
+// Font size
+
+$basicFontSize: 10px;
+$primaryFont: 'Golos', 'Helvetica', sans-serif;
+$secondaryFont: 'Glober', 'Helvetica', sans-serif;
+
+//others
+
+$basicTransition: all 0.3s;
