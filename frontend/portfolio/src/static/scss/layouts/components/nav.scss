@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+
+  &__item {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: $basicTransition;
+    cursor: pointer;
+
+    // @include respond-to(hover) {
+
+    //   &:hover {
+    //     color: $red;
+    //   }
+    // }
+  }
+}
