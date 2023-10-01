@@ -1,0 +1,315 @@
+html {
+  min-height: 100%;
+  font-size: $basicFontSize;
+}
+
+html,
+body,
+figure,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ol,
+ul,
+input,
+button,
+textarea,
+blockquote {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 2560px;
+  height: 100%;
+  margin: 0 auto;
+  font-family: $secondaryFont;
+  color: $mineShaft;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+
+  &.inactive {
+    overflow: hidden;
+  }
+}
+
+* {
+  box-sizing: initial;
+
+  &::before,
+  &::after {
+    box-sizing: initial;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: $basicTransition;
+
+  &.text {
+    color: $blue;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  &.cover {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.contain {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &.fill {
+    height: 100%;
+    object-fit: fill;
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+select,
+input {
+  border-radius: initial;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  &:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $white !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: $white !important;
+    }
+  }
+}
+
+button {
+
+  &:disabled,
+  &.disable {
+    pointer-events: none;
+
+    // @include respond-to(hover) {
+
+    //   &:hover {
+    //     color: $white;
+    //   }
+    // }
+  }
+
+  &.text-link {
+    text-align: left;
+    cursor: pointer;
+  }
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto;
+  gap: 80px;
+  min-height: 100vh;
+  padding: 40px 0 20px;
+  box-sizing: border-box;
+
+  @include respond-to(tablet) {
+    padding-top: 60px;
+    gap: 40px;
+  }
+}
+
+.content {
+  padding: 0 20px;
+
+  @include respond-to(phone) {
+    padding: 0 10px;
+  }
+}
+
+.title {
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 120%;
+  animation: fadeInUp 1s;
+
+  @include respond-to(phone) {
+    font-size: 2.6rem;
+    word-break: break-word;
+  }
+
+  &--xl {
+    font-size: 6.4rem;
+
+    span {
+      display: block;
+      font-weight: 400;
+      line-height: 100%;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 120%;
+
+  &--xs {
+    font-size: 2.4rem;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.text {
+  font-size: 2rem;
+  line-height: 150%;
+
+  &--xs {
+    font-size: 1.8rem;
+  }
+
+  &--xxs {
+    font-size: 1.4rem;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.list {
+  @include nl();
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 25px;
+  text-align: left;
+
+  @include respond-to(desktop) {
+    gap: 20px;
+  }
+
+  li {
+    position: relative;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      top: 0;
+      left: -24px;
+      color: $mineShaft;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 60;
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .inner {
+    width: 768px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 100px;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  line-height: 42px;
+  text-align: center;
+  color: $white;
+  background-color: $mineShaft;
+  transition: $basicTransition;
+  cursor: pointer;
+
+  @include respond-to(phone) {
+    // width: 100%;
+    // max-width: initial;
+    min-width: initial;
+  }
+
+  @include respond-to(hover) {
+
+    &:hover {
+      border-color: $mineShaft;
+      color: $mineShaft;
+      background-color: $white;
+    }
+  }
+
+  &--border {
+    border: 1px solid rgba($mineShaft, 0.3);
+    background-color: transparent;
+    color: $mineShaft;
+
+    &.active {
+      border-color: $mineShaft;
+    }
+  }
+}

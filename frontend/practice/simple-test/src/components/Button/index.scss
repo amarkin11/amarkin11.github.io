@@ -1,0 +1,44 @@
+.btn {
+  display: inline-block;
+  padding: 18px 40px 17px;
+  border: 1px solid $white;
+  border-radius: 40px;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  line-height: 120%;
+  text-align: center;
+  color: $blue;
+  background-color: $white;
+  box-shadow: $basicShadow;
+  transition: $basicTransition;
+
+  @include respond-to(phone) {
+    width: 100%;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: transparent;
+  }
+
+  &--blue {
+    border-color: $blue;
+    color: $white;
+    background-color: $blue;
+
+    &:hover {
+      color: $blue;
+      background-color: transparent;
+    }
+  }
+
+  &--md {
+    padding-left: 65px;
+    padding-right: 65px;
+
+    @include respond-to(phone) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+}

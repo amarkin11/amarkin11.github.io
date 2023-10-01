@@ -1,0 +1,20 @@
+@import '/node_modules/css-reset-and-normalize/scss/reset-and-normalize';
+@import '/node_modules/css-reset-and-normalize/scss/button-reset';
+@import '/node_modules/css-reset-and-normalize/scss/link-reset';
+
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'main';
+
+@import '../../components/App/index.scss';
+@import '../../components/Header/index.scss';
+@import '../../components/Nav/index.scss';
+@import '../../components/MainContent/index.scss';
+@import '../../components/ProjectsList/index.scss';
+@import '../../components/Footer/index.scss';
+
+@import '../../components/Spinner/index.scss';
+@import '../../components/Search/index.scss';
+@import '../../components/ToolsPanel/index.scss';
+@import '../../components/BtnMenu/index.scss';

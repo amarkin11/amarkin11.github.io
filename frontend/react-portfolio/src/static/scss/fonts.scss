@@ -1,0 +1,61 @@
+/* Your custom fonts here */
+
+@font-face {
+  font-family: 'Golos';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url('../fonts/Golos/Golos-Regular.woff2') format('woff2'),
+      url('../fonts/Golos/Golos-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Golos';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url('../fonts/Golos/Golos-Medium.woff2') format('woff2'),
+      url('../fonts/Golos/Golos-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Golos';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url('../fonts/Golos/Golos-Bold.woff2') format('woff2'),
+      url('../fonts/Golos/Golos-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Glober';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url('../fonts/Glober/Glober-Regular.woff2') format('woff2'),
+      url('../fonts/Glober/Glober-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Glober';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url('../fonts/Glober/Glober-Bold.woff2') format('woff2'),
+      url('../fonts/Glober/Glober-Bold.woff') format('woff');
+}
+
+// Thin: 100
+// ExtraLight: 200
+// Light: 300
+// Regular: 400
+// Medium: 500
+// SemiBold: 600
+// Bold: 700
+// ExtraBold: 800
+// Black: 900

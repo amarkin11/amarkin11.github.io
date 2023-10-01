@@ -1,0 +1,24 @@
+.input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid rgba($mineShaft, 0.3);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  color: $mineShaft;
+
+  @include respond-to(laptop) {
+    max-width: 400px;
+  }
+
+  @include respond-to(phone) {
+    max-width: 100%;
+  }
+
+  &::placeholder {
+    color: #a6a6a6;
+    opacity: 1;
+  }
+}

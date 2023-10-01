@@ -1,0 +1,8 @@
+.item-add-form {
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.item-add-form button {
+  flex-shrink: 0;
+}

@@ -1,0 +1,35 @@
+.book {
+
+  &-list-item {
+    display: flex;
+    gap: 30px;
+
+    .book {
+
+      &-cover {
+        flex-shrink: 0;
+        width: 120px;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      &-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 10px;
+      }
+
+      &-title {
+        font-size: 1.2rem;
+      }
+
+      &-price {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
