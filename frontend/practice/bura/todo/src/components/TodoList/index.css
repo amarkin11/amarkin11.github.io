@@ -1,0 +1,29 @@
+.todo-list .list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+}
+
+.list-group-item .btn-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.list-group-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+
+.list-group-item button:hover path {
+  fill: white;
+}
+
+.list-group-item button svg {
+  width: 90%;
+  height: 90%;
+}

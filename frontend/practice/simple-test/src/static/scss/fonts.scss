@@ -1,0 +1,32 @@
+/* Your custom fonts here */
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url("../fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
+      url("../fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src:
+      url("../fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"),
+      url("../fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
+      url("../fonts/Montserrat/Montserrat-Bold.ttf") format("ttf");
+}
+
+// Thin: 100
+// ExtraLight: 200
+// Light: 300
+// Regular: 400
+// Medium: 500
+// SemiBold: 600
+// Bold: 700
+// ExtraBold: 800
+// Black: 900

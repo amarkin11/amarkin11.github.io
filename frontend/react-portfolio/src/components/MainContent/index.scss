@@ -1,0 +1,27 @@
+.section {
+
+  &.flex {
+    display: flex;
+    gap: 40px;
+
+    @include respond-to(tablet) {
+      gap: 0;
+    }
+  }
+
+  &__item {
+
+    &:last-child {
+      flex-grow: 1;
+    }
+
+    &.flex {
+
+      &-column {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// Device dimensions
+
+$phone: 320px;
+$xxs: 375px;
+$xs: 479px;
+$mobile: 639px;
+$sm: 767px;
+$md: 1024px;
+$wd: 1199px;
+$lg: 1439px;
+$xxl: 1919px;
+
+// Colors
+
+$black: #000;
+$crimson: #ed1b34;
+$endeavour: #0054a4;
+$blue: #003672;
+$mineShaft: #262626;
+$white: #fff;
+
+// Font size
+
+$basicFontSize: 10px;
+$montserrat: 'Montserrat', 'Helvetica', sans-serif;
+
+//others
+
+$basicOverlay: rgba($black, 0.5);
+$basicShadow: 0px 4px 4px rgba($black, 0.15);
+$basicTransition: all 0.3s;

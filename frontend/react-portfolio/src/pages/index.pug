@@ -1,0 +1,21 @@
+include ../layouts/head/head
+include ../layouts/content/home/index
+include ../layouts/components/header
+include ../layouts/components/footer
+
+doctype html
+html(lang='ru')
+  head
+    +head('Portfolio A.M.')
+      //- script(src=require('@static/js/bundles/example.js') defer)
+
+  body
+    .site.page-main
+      <button class="btn-go-top js-btn-go-top">
+        <svg width="24" height="14" viewBox="0 0 24 14" fill="none">
+            <path d="M11.5216 0.270832L0.199927 12.2116C-0.0666423 12.4928 -0.0666422 12.9437 0.199927 13.2248C0.466496 13.506 0.894012 13.506 1.16058 13.2248L11.9994 1.79327L22.8382 13.2248C23.1047 13.506 23.5322 13.506 23.7988 13.2248C23.9296 13.0869 24 12.9012 24 12.7209C24 12.5405 23.9346 12.3548 23.7988 12.2169L12.4772 0.276135C12.2156 -0.00501209 11.7831 -0.00501112 11.5216 0.270832Z" fill="#fff" />
+        </svg>
+      </button>
+      main.content
+        +homeContent
+      +footer

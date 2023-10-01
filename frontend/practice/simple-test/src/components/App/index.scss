@@ -1,0 +1,49 @@
+.test {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  min-height: 100vh;
+  padding-top: 160px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  background-image: url('../../static/images/bg/001.svg');
+  background-attachment: fixed;
+  background-position:top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  @include respond-to(desktop) {
+    gap: 35px;
+    padding-top: 125px;
+    padding-bottom: 80px;
+  }
+
+  @include respond-to(laptop) {
+    background-image: none;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 4.2rem;
+    line-height: 100%;
+
+    @include respond-to(desktop) {
+      font-size: 3.6rem
+    }
+
+    @include respond-to(fablet) {
+      font-size: 3rem
+    }
+  }
+}
+
+.spinner {
+  text-align: center;
+}

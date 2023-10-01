@@ -1,0 +1,40 @@
+.tools-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__row {
+
+    &.flex {
+      display: flex;
+      gap: 20px;
+
+      @include respond-to(laptop) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__item {
+    flex-grow: 1;
+    width: 50%;
+
+    &.flex {
+      display: flex;
+      gap: 10px;
+
+      @include respond-to(phone) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+
+  @include respond-to(fablet) {
+    flex-wrap: wrap;
+  }
+}

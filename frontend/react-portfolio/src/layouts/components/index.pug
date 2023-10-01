@@ -1,0 +1,6 @@
+mixin card(className, href, img, imgClass, title)
+  .cards__item(class= className)
+    a.cards__link(href= href, target="_blank")
+    .cards__img(class= imgClass ? 'cards__img--' + imgClass : '')
+      img.cover(src=require('@content/project/' + img) alt='')
+    h2.cards__title!= title

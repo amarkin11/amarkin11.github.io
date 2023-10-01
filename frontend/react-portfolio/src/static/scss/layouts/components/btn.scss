@@ -1,0 +1,81 @@
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 220px;
+  padding: 15px 25px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $mineShaft;
+  transition: $basicTransition;
+  cursor: pointer;
+
+  @include respond-to(phone) {
+    width: 100%;
+    max-width: initial;
+  }
+
+  @include respond-to(hover) {
+
+    &:hover {
+      border-color: $mineShaft;
+      color: $mineShaft;
+      background-color: $white;
+    }
+  }
+
+  &-more {
+    align-self: center;
+    animation: inLeft 1s;
+  }
+
+  &-go-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 80;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $white;
+    background-color: $mineShaft;
+    visibility: hidden;
+    opacity: 0;
+    transition: $basicTransition;
+    cursor: pointer;
+
+    @include respond-to(laptop) {
+      right: 30px;
+      bottom: 30px;
+    }
+
+    @include respond-to(small_tablet) {
+      right: 10px;
+      bottom: 10px;
+    }
+
+    @include respond-to(hover) {
+
+      &:hover {
+        border-color: $mineShaft;
+        background-color: $white;
+
+        path {
+          fill: $mineShaft;
+        }
+      }
+    }
+
+    path {
+      transition: $basicTransition;
+    }
+
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
