@@ -17,12 +17,13 @@ const ProjectsList = ({projects}) => {
       }
       <div className="projects">
         {
-          projects.map(({id, link, img, title}) => {
+          projects.map(({id, link, img, title, imgClass}) => {
             return(
               <ProjectsItem
                 link={link}
                 img={img}
                 title={title}
+                imgClass={imgClass}
                 key={id}
               />
             )
@@ -34,12 +35,13 @@ const ProjectsList = ({projects}) => {
   );
 };
 
-const ProjectsItem = ({link, img, title}) => {
+const ProjectsItem = ({link, img, title, imgClass}) => {
+  const clazz = imgClass ? ' projects__img--left' : '';
 
   return(
     <div className="projects__item">
       <a className="projects__link" href={link} target="_blank"></a>
-      <div className="projects__img">
+      <div className={`projects__img${clazz}`}>
         <img className="cover" src={img} alt=""/>
       </div>
       <h2 className="projects__title">{title}</h2>
