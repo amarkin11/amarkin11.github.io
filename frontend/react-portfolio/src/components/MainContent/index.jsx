@@ -8,7 +8,10 @@ import Header from '../Header';
 import MainNav from '../Nav';
 import ToolsPanel from '../ToolsPanel';
 
+import { getUrlBase } from '../../utils';
+
 const MainContent = () => {
+
   return(
     <main className="content">
       <div className="container flex-column">
@@ -20,10 +23,10 @@ const MainContent = () => {
           <div className="section__item flex-column">
             <ToolsPanel />
             <Routes>
-              <Route path='/' element={<HomePage />}/>
-              <Route path='/projects/' element={<ProjectsPage />}/>
-              <Route path='/projects-react/' element={<ProjectsReactPage />}/>
-              <Route path='*' element={ <h2 className="title">Здесь ничего нет</h2> }/>
+              <Route path={`${getUrlBase()}/`} element={<HomePage />}/>
+              <Route path={`${getUrlBase()}/projects`} element={<ProjectsPage />}/>
+              <Route path={`${getUrlBase()}/projects-react`} element={<ProjectsReactPage />}/>
+              <Route path={`${getUrlBase()}/*`} element={ <h2 className="title">Здесь ничего нет</h2> }/>
             </Routes>
           </div>
         </div>
