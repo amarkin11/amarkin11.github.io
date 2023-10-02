@@ -1,20 +1,10 @@
-import img001 from '../../static/images/001.jpg';
-import img002 from '../../static/images/002.jpg';
-import img003 from '../../static/images/003.jpg';
-import img004 from '../../static/images/004.jpg';
-import img005 from '../../static/images/005.jpg';
-import img006 from '../../static/images/006.jpg';
-import img007 from '../../static/images/007.jpg';
-import img008 from '../../static/images/008.jpg';
-import img009 from '../../static/images/009.jpg';
-import img010 from '../../static/images/010.jpg';
-
 export default class TestServices {
+  _imageBase = 'https://amarkin11.github.io/release/media/images/hills-test';
 
   data = [
     {
       title: 'Начнем с самого легкого. Этот вальяжный котяра – какой породы?',
-      image: img001,
+      image: `${this._imageBase}/001.jpg`,
       answers: [
         ['британский мраморный', false],
         ['мейн-кун', true],
@@ -25,7 +15,7 @@ export default class TestServices {
     },
     {
       title: 'Куда бежишь ты, косматое чудо-юдо? И какой ты породы?',
-      image: img002,
+      image: `${this._imageBase}/002.jpg`,
       answers: [
         ['пули', false],
         ['африканский риджбек', false],
@@ -36,7 +26,7 @@ export default class TestServices {
     },
     {
       title: 'Какой породы эта аристократка?',
-      image: img003,
+      image: `${this._imageBase}/003.jpg`,
       answers: [
         ['британская короткошерстная', false],
         ['шартрез', false],
@@ -47,7 +37,7 @@ export default class TestServices {
     },
     {
       title: 'А этот хороший мальчик каких кровей?',
-      image: img004,
+      image: `${this._imageBase}/004.jpg`,
       answers: [
         ['американский стаффордширский терьер', true],
         ['американский питбультерьер', false],
@@ -59,7 +49,7 @@ export default class TestServices {
     },
     {
       title: 'Какая это порода кошек?',
-      image: img005,
+      image: `${this._imageBase}/005.jpg`,
       answers: [
         ['корниш-рекс', true],
         ['донской сфинкс', false],
@@ -70,7 +60,7 @@ export default class TestServices {
     },
     {
       title: 'Что это за порода собак?',
-      image: img006,
+      image: `${this._imageBase}/006.jpg`,
       answers: [
         ['русская псовая борзая', false],
         ['салюки', true],
@@ -81,7 +71,7 @@ export default class TestServices {
     },
     {
       title: 'А к какой породе принадлежит этот лопоухий кот?',
-      image: img007,
+      image: `${this._imageBase}/007.jpg`,
       answers: [
         ['египетская мау', false],
         ['сиамская', false],
@@ -92,7 +82,7 @@ export default class TestServices {
     },
     {
       title: 'Очаровашка мраморного окраса! А породы какой?',
-      image: img008,
+      image: `${this._imageBase}/008.jpg`,
       answers: [
         ['австралийская овчарка (аусси)', false],
         ['австралийский хилер', false],
@@ -103,7 +93,7 @@ export default class TestServices {
     },
     {
       title: 'Немногие породы кошек отличаются такими выразительными, будто сурьмой подведенными, глазами. А здесь изображена...',
-      image: img009,
+      image: `${this._imageBase}/009.jpg`,
       answers: [
         ['абиссинская', true],
         ['анатолийская ', false],
@@ -114,7 +104,7 @@ export default class TestServices {
     },
     {
       title: 'Собака именно этой породы изображена в мультфильме «Леди и Бродяга». Что это за порода?',
-      image: img010,
+      image: `${this._imageBase}/010.jpg`,
       answers: [
         ['английский кокер-спаниель', false],
         ['американский кокер-спаниель', true],
