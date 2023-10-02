@@ -7,7 +7,7 @@ const Header = () => {
         <h1 className="title">Portfolio A.M.</h1>
       </div>
       <div className="header__item">
-        <a className="text text--xxs" href="https://amarkin11.github.io/release/portfolio/" target="_blank">Старая версия</a>
+        <a className="text text--xxs" href="https://amarkin11.github.io/release/portfolio-old/" target="_blank">Старая версия</a>
       </div>
     </header>
   )
