@@ -26,7 +26,7 @@ const MainContent = () => {
               <Route path={`${getUrlBase()}/`} element={<HomePage />}/>
               <Route path={`${getUrlBase()}/projects`} element={<ProjectsPage />}/>
               <Route path={`${getUrlBase()}/projects-react`} element={<ProjectsReactPage />}/>
-              <Route path={`${getUrlBase()}/*`} element={ <h2 className="title">Здесь ничего нет</h2> }/>
+              <Route path='*' element={ <h2 className="title">Здесь ничего нет</h2> }/>
             </Routes>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import { connect } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter } from 'react-router-dom';
 
 import { ProjectServiceProvider } from '../ProjectsServiceContext';
 import ProjectsServices from '../../services/Projects';
@@ -14,13 +14,13 @@ const projectsServices = new ProjectsServices();
 
 const App = () => {
   return(
-    <Router>
+    <HashRouter>
       <BtnMenu />
       <ProjectServiceProvider value={projectsServices}>
         <MainContent />
       </ProjectServiceProvider>
       <Footer />
-    </Router>
+    </HashRouter>
   )
 };
 
