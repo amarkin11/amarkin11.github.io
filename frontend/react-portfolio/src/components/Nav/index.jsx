@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-import { compose, getUrlBase } from '../../utils';
+import { compose } from '../../utils';
 import withProjectsService from '../../hoc/WithProjectsService';
 
 import { fetchProjectsTotal, toggleMenu } from '../../actions';
@@ -18,9 +18,9 @@ class MainNav extends Component {
           { mobileMenu, closeMenu } = this.props;
 
     const links = [
-      {href: `${getUrlBase()}/`, title: 'Все проекты', total: all},
-      {href: `${getUrlBase()}/projects/`, title: 'Проекты и спецпроекты', total: special},
-      {href: `${getUrlBase()}/projects-react/`, title: 'React проекты', total: react},
+      {href: '/', title: 'Все проекты', total: all},
+      {href: '/projects/', title: 'Проекты и спецпроекты', total: special},
+      {href: '/projects-react/', title: 'React проекты', total: react},
     ];
 
      const renderNavItems = () => {
