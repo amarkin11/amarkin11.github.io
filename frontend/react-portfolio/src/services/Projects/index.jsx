@@ -4,8 +4,8 @@ export default class ProjectsServices {
   _imageBase = 'https://amarkin11.github.io/release/media/images/projects';
 
   data = [
-    {id: 1, type: '', link: 'https://rtraveler.ru/', img: `${this._imageBase}/rt.jpg`, imgClass: '', title: 'Russian Traveler', year: '2022', view: 'mpa'},
-    {id: 2, type: '', link: 'https://awards22.rtraveler.ru/', img: `${this._imageBase}/rtawards.jpg`, imgClass: 'left', title: 'Russian Traveler Awards 2022', year: '2022', view: 'mpa'},
+    {id: 1, type: 'special', link: 'https://rtraveler.ru/', img: `${this._imageBase}/rt.jpg`, imgClass: '', title: 'Russian Traveler', year: '2022', view: 'mpa'},
+    {id: 2, type: 'special', link: 'https://awards22.rtraveler.ru/', img: `${this._imageBase}/rtawards.jpg`, imgClass: 'left', title: 'Russian Traveler Awards 2022', year: '2022', view: 'mpa'},
     {id: 3, type: 'special', link: 'https://www.agroinvestor.ru/', img: `${this._imageBase}/agro.jpg`, imgClass: '', title: 'Агроинвестор', year: '2020', view: 'mpa'},
     {id: 4, type: 'special', link: 'https://award.agroinvestor.ru/', img: `${this._imageBase}/agroawards.jpg`, imgClass: '', title: 'Агроинвестор года - 2022', year: '2022', view: 'landing'},
     {id: 5, type: 'special', link: 'https://bees.agroinvestor.ru/', img: `${this._imageBase}/agrobee.jpg`, imgClass: 'left', title: 'Защитим пчёл вместе', year: '2021', view: 'mpa'},
@@ -25,9 +25,13 @@ export default class ProjectsServices {
     {id: 19, type: 'special', link: 'https://hills.rtraveler.ru/', img: `${this._imageBase}/rthills.jpg`, imgClass: '', title: 'От идеи до дегустации: как создаются правильные корма для животных', year: '2021', view: 'mpa'},
     {id: 20, type: 'special', link: 'https://samsung.rtraveler.ru/', img: `${this._imageBase}/rtsamsung.jpg`, imgClass: '', title: 'Наша #СтранаКосмос', year: '2019', view: 'landing'},
     {id: 21, type: 'special', link: 'https://samsunggalaxycamera.rtraveler.ru/', img: `${this._imageBase}/rtsamsunggcamera.jpg`, imgClass: '', title: '10 мест для лучшего зимнего отдыха – Вместе с Samsung Galaxy S21 Ultra', year: '2021', view: 'landing'},
-    {id: 22, type: 'react', link: 'https://ru.siberianhealth.com/ru/new-year2018', img: `${this._imageBase}/sibny2018.jpg`, imgClass: '', title: 'Корпорация Сибирское здоровье', year: '2018', view: 'spa'},
-    {id: 23, type: 'react', link: 'https://herbhunters.ru', img: `${this._imageBase}/sibheadh.jpg`, imgClass: '', title: 'Охотники за травами 2', year: '2018', view: 'spa'},
-    {id: 24, type: 'react', link: 'https://www.agroinvestor.ru/test-drive/cnh/', img: `${this._imageBase}/agrotestdrive.jpg`, imgClass: '', title: 'New Holland FR', year: '2020', view: 'spa'},
+    {id: 22, type: 'special', link: 'https://ru.siberianhealth.com/ru/new-year2018', img: `${this._imageBase}/sibny2018.jpg`, imgClass: '', title: 'Корпорация Сибирское здоровье', year: '2018', view: 'landing'},
+    {id: 23, type: 'special', link: 'https://herbhunters.ru', img: `${this._imageBase}/sibheadh.jpg`, imgClass: '', title: 'Охотники за травами 2', year: '2018', view: 'mpa'},
+    {id: 24, type: 'special', link: 'https://www.agroinvestor.ru/test-drive/cnh/', img: `${this._imageBase}/agrotestdrive.jpg`, imgClass: '', title: 'New Holland FR', year: '2020', view: 'landing'},
+    {id: 25, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/test/', img: `${this._imageBase}/test.jpg`, imgClass: '', title: 'Тест: угадай породу', year: '2023', view: 'spa'},
+    {id: 26, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/todo/', img: `${this._imageBase}/todo.jpg`, imgClass: '', title: 'Todo list', year: '2023', view: 'spa'},
+    {id: 27, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/re-store/', img: `${this._imageBase}/restore.jpg`, imgClass: '', title: 'Re-store', year: '2023', view: 'spa'},
+    {id: 28, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/star-db/', img: `${this._imageBase}/stardb.jpg`, imgClass: '', title: 'Star-db', year: '2023', view: 'spa'},
   ];
 
   // getProject() {
