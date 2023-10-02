@@ -29,9 +29,9 @@ export default class ProjectsServices {
     {id: 23, type: 'special', link: 'https://herbhunters.ru', img: `${this._imageBase}/sibheadh.jpg`, imgClass: '', title: 'Охотники за травами 2', year: '2018', view: 'mpa'},
     {id: 24, type: 'special', link: 'https://www.agroinvestor.ru/test-drive/cnh/', img: `${this._imageBase}/agrotestdrive.jpg`, imgClass: '', title: 'New Holland FR', year: '2020', view: 'landing'},
     {id: 25, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/test/', img: `${this._imageBase}/test.jpg`, imgClass: '', title: 'Тест: угадай породу', year: '2023', view: 'spa'},
-    {id: 26, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/todo/', img: `${this._imageBase}/todo.jpg`, imgClass: '', title: 'Todo list', year: '2023', view: 'spa'},
-    {id: 27, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/re-store/', img: `${this._imageBase}/restore.jpg`, imgClass: '', title: 'Re-store', year: '2023', view: 'spa'},
-    {id: 28, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/star-db/', img: `${this._imageBase}/stardb.jpg`, imgClass: '', title: 'Star-db', year: '2023', view: 'spa'},
+    {id: 26, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/todo/', img: `${this._imageBase}/todo.jpg`, imgClass: 'left', title: 'Todo list', year: '2023', view: 'spa'},
+    {id: 27, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/re-store/', img: `${this._imageBase}/restore.jpg`, imgClass: 'left', title: 'Re-store', year: '2023', view: 'spa'},
+    {id: 28, type: 'react', link: 'https://amarkin11.github.io/release/projects-react/star-db/', img: `${this._imageBase}/stardb.jpg`, imgClass: 'left', title: 'Star-db', year: '2023', view: 'spa'},
   ];
 
   // getProject() {

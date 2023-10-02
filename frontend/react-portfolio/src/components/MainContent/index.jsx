@@ -21,8 +21,8 @@ const MainContent = () => {
             <ToolsPanel />
             <Routes>
               <Route path='/' element={<HomePage />}/>
-              <Route path='/projects' element={<ProjectsPage />}/>
-              <Route path='/projects-react' element={<ProjectsReactPage />}/>
+              <Route path='/projects/' element={<ProjectsPage />}/>
+              <Route path='/projects-react/' element={<ProjectsReactPage />}/>
               <Route path='*' element={ <h2 className="title">Здесь ничего нет</h2> }/>
             </Routes>
           </div>
