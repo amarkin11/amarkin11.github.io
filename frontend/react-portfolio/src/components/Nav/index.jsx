@@ -19,8 +19,8 @@ class MainNav extends Component {
 
     const links = [
       {href: `${getUrlBase()}/`, title: 'Все проекты', total: all},
-      {href: `${getUrlBase()}/projects`, title: 'Проекты и спецпроекты', total: special},
-      {href: `${getUrlBase()}/projects-react`, title: 'React проекты', total: react},
+      {href: `${getUrlBase()}/projects/`, title: 'Проекты и спецпроекты', total: special},
+      {href: `${getUrlBase()}/projects-react/`, title: 'React проекты', total: react},
     ];
 
      const renderNavItems = () => {
