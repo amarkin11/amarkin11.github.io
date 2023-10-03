@@ -5,8 +5,8 @@
 }
 
 .item-details .item-image {
-  width: 30%;
-  height: 30%;
+  width: max(150px, 30%);
+  height: max(150px, 30%);
   border-radius: 10px;
 }
 

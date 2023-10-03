@@ -73,8 +73,6 @@ export default class ItemDetails extends Component {
       return React.cloneElement(child, { item });
     });
 
-    console.log(loading);
-
     const dummy = !item && !loading ? <div className="item-details card">Select a person from a list</div> : null;
     const spinner = loading ? <Spinner /> : null;
     const content =

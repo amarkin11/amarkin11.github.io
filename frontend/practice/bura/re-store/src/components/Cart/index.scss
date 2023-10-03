@@ -24,3 +24,22 @@
     text-align: right;
   }
 }
+
+.table {
+  min-width: 690px;
+  margin-bottom: 0;
+
+  &-wrap {
+    overflow-x: auto;
+  }
+
+  &-scroll-icon {
+    display: none;
+    font-size: 1.4rem;
+    text-align: center;
+
+    @media only screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+}
