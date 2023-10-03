@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter, Route, Routes, useParams } from 'react-router-dom';
 
 import { SwapiServiceProvider } from '../../contextApi';
 import SwapiService from '../../services/Swapi';
@@ -30,7 +30,7 @@ export default class App extends Component {
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value={ this.swapiService }>
-          <Router>
+          <HashRouter>
             <div className='content'>
               <Header />
               <RandomPlanet />
@@ -44,11 +44,9 @@ export default class App extends Component {
                 <Route path='*' element={ <h2>This page not found!</h2> }/>
               </Routes>
             </div>
-          </Router>
+          </HashRouter>
         </SwapiServiceProvider>
       </ErrorBoundry>
     )
   };
 };
-
-
