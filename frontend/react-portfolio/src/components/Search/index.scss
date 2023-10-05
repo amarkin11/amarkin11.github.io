@@ -9,10 +9,6 @@
   font-size: 1.4rem;
   color: $mineShaft;
 
-  @include respond-to(laptop) {
-    max-width: 400px;
-  }
-
   @include respond-to(phone) {
     max-width: 100%;
   }
@@ -20,5 +16,9 @@
   &::placeholder {
     color: #a6a6a6;
     opacity: 1;
+  }
+
+  &[type="search"] {
+    max-width: 600px;
   }
 }
