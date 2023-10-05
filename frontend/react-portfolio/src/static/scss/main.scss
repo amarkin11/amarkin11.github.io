@@ -282,7 +282,7 @@ button {
   box-sizing: border-box;
   min-width: 100px;
   height: 40px;
-  padding: 0 20px;
+  padding: 0 25px;
   border-radius: 4px;
   font-size: 1.4rem;
   line-height: 42px;
@@ -322,10 +322,10 @@ button {
     position: relative;
 
     &::after {
-      content: "\1F813";
+      content: "\2193";
       position: absolute;
       top: calc(50% + 1px);
-      right: 3px;
+      right: 4px;
       transform: translateY(-50%);
       display: none;
       height: 100%;
