@@ -322,7 +322,7 @@ button {
     position: relative;
 
     &::after {
-      content: "\1F813";
+      content: "";
       position: absolute;
       top: calc(50% + 1px);
       right: 3px;
