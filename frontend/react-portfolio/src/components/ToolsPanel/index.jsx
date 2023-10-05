@@ -43,7 +43,7 @@ const ToolsPanel = ({
 
     return(
       <button
-        className={`btn btn--border${clazz}`}
+        className={`btn btn--border btn--sort${clazz}`}
         onClick={() => onSortChange(name)}
         key={100 + i}
       >{title}</button>
@@ -66,14 +66,14 @@ const ToolsPanel = ({
     !loading &&
     <>
       <div className="tools-panel">
-        <div className="tools-panel__row flex">
-          <div className="tools-panel__item">
-            <Search
+        <div className="tools-panel__row">
+          <Search
               term={term}
               onSearchChange={(term) => onSearchChange(term)}
             />
-          </div>
-          <div className="tools-panel__item flex">
+        </div>
+        <div className="tools-panel__row">
+          <div className="filters">
             { renderButtons }
             <button
               className="btn btn--border"

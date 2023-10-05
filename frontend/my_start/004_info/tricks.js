@@ -37,6 +37,16 @@ variable === null;
 // Преобразовать массив в строку:
 array.join(",");
 
+// Преобразовать строку в массив:
+Array.from('1234'); // ['1', '2', '3', '4'];
+[...'hello']; // ['h', 'e', 'l', 'l', 'o'];
+'test'.split(''); // => ['t', 'e', 's', 't'];
+
+// Перебираем строку в цикле
+for (const symbol of 'test') {
+  console.log(symbol);
+};
+
 // Преобразовать объект в массив:
 Object.values(object);
 
@@ -47,7 +57,23 @@ array.filter(x => x === element).length;
 // { [key]: value }
 
 // Проверить, является ли строка палиндромом:
-string === string.split("").reverse().join("");
+function isPalindrome(str) {
+  return str === str.split("").reverse().join("");
+};
+
+function SingleCharacterPalindrome(str) {
+  if (isPalindrome(str)) {
+    return "OK";
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    if (isPalindrome(str.slice(0, i) + str.slice(i + 1))) {
+      return "remove one";
+    }
+  }
+
+  return "not possible";
+};
 
 // Получить сумму всех чисел в массиве:
 array.reduce((a, b) => a + b, 0);
@@ -57,3 +83,85 @@ array.length === 0;
 
 // Создать новый массив с определенным диапазоном чисел:
 Array.from({ length: n }, (_, i) => i);
+
+// Следует исключить из списка "а" все значения, которые присутствуют в списке "Ь", сохраняя их порядок.
+const arrayDiff = (a, b) => a.filter( x => !b.includes(x))
+
+// Напишите функцию squareDigits, которая принимает число и возводит в квадрат каждый символ.
+const squareDigits = (num) => {
+    let result = "";
+
+    for (const n of num.toString()) {
+        result += Number(n) ** 2;
+    }
+
+    return Number(result);
+};
+
+const squareDigits2 = (num) => {
+  return +num
+    .toString()
+    .split("")
+    .map((n) => (+n) ** 2)
+    .join("");
+};
+
+// Напишите функцию randomHex, которая генерирует случайное HEX-значение заданной длины.
+const randomHex = (size) => {
+  return [...Array(size)]
+    .map(() => Math.floor(Math.random() * 16).toString(16))
+    .join("");
+};
+
+// Функция order
+function order(words) {
+  return words
+    .split(" ")
+    .sort((a, b) => +a.match(/\d/) - +b.match(/\d/))
+    .map((word) => word.match(/\D/g)?.join(""))
+    .join(" ");
+}
+
+// Удалить лишние пробелы из строки
+function strip(str) {
+  return str
+    .replace(/\s+/g,'') // заменить длинные пробелы одним
+    .replace(/^\s/,'')  // удалить пробелы в начале строки
+    .replace(/\s$/,'');  // удалить пробелы в конце строки
+}
+
+// Вернуть случайный элемент из массива
+function randomElement(arr) {
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+// Функция generatePassword
+function generatePassword(length) {
+  const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  return new Array(length)
+    .fill(null)
+    .map(() => chars[Math.floor(Math.random() * chars.length)])
+    .join('');
+}
+
+// Найти счастливое целое число в массиве
+var findLucky = function(arr) {
+    let lucky = [-1];
+    let numObj = {};
+    for (const num of arr) {
+        numObj[num] ? numObj[num] += 1 : numObj[num] = 1;
+    }
+    let nums = Object.keys(numObj);
+    let frequencies = Object.values(numObj);
+    for (let num in nums) {
+        if (nums[num] == frequencies[num]) {
+            lucky.push(frequencies[num]);
+        }
+    }
+    if (lucky.length === 1) {
+        return lucky;
+    } else {
+        return Math.max(...lucky);
+    }
+};
